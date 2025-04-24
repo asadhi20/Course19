@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DVLD_v0.1_SQL_SS">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="DESKTOP-VPONIHG:DESKTOP-VPONIHG\Mr Abbas Ahmed">
+          <Created>2025-01-02T14:07:53.4061507+03:00</Created>
+          <Type>SQL</Type>
+          <Server>DESKTOP-VPONIHG</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>DVLD</InitialDB>
+          <LoginTimeout>30</LoginTimeout>
+          <TrustServerCertificate>True</TrustServerCertificate>
+          <HostNameInServerCertificate />
+          <EncryptionOption>True</EncryptionOption>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="SP_LocalDrivingLicenseApplicationsTable.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-VPONIHG:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-VPONIHG</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SP_LocalDrivingLicenseApplicationsTable.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Stored Procedure.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-VPONIHG:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-VPONIHG</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Stored Procedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Test.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-VPONIHG:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-VPONIHG</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Test.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Testing some queries.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-VPONIHG:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-VPONIHG</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Testing some queries.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Views.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-VPONIHG:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-VPONIHG</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Views.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

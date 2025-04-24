@@ -1,0 +1,6 @@
+C:\Users\Mr Abbas Ahmed\source\repos\Projects\DVLD v.0.1\Extensions\bin\Release\HelperClasses.dll
+C:\Users\Mr Abbas Ahmed\source\repos\Projects\DVLD v.0.1\Extensions\bin\Release\HelperClasses.pdb
+C:\Users\Mr Abbas Ahmed\source\repos\Projects\DVLD v.0.1\Extensions\obj\Release\HelperClasses.csproj.AssemblyReference.cache
+C:\Users\Mr Abbas Ahmed\source\repos\Projects\DVLD v.0.1\Extensions\obj\Release\HelperClasses.csproj.CoreCompileInputs.cache
+C:\Users\Mr Abbas Ahmed\source\repos\Projects\DVLD v.0.1\Extensions\obj\Release\HelperClasses.dll
+C:\Users\Mr Abbas Ahmed\source\repos\Projects\DVLD v.0.1\Extensions\obj\Release\HelperClasses.pdb

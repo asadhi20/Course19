@@ -1,0 +1,12 @@
+C:\Users\Mr Abbas Ahmed\source\repos\Projects\DVLD v.0.1\Extensions\bin\Debug\HelperClasses.dll
+C:\Users\Mr Abbas Ahmed\source\repos\Projects\DVLD v.0.1\Extensions\bin\Debug\HelperClasses.pdb
+C:\Users\Mr Abbas Ahmed\source\repos\Projects\DVLD v.0.1\Extensions\obj\Debug\HelperClasses.csproj.AssemblyReference.cache
+C:\Users\Mr Abbas Ahmed\source\repos\Projects\DVLD v.0.1\Extensions\obj\Debug\HelperClasses.csproj.CoreCompileInputs.cache
+C:\Users\Mr Abbas Ahmed\source\repos\Projects\DVLD v.0.1\Extensions\obj\Debug\HelperClasses.dll
+C:\Users\Mr Abbas Ahmed\source\repos\Projects\DVLD v.0.1\Extensions\obj\Debug\HelperClasses.pdb
+C:\Users\mraba\source\repos\Projects\DVLD v.0.1\Extensions\bin\Debug\HelperClasses.dll
+C:\Users\mraba\source\repos\Projects\DVLD v.0.1\Extensions\bin\Debug\HelperClasses.pdb
+C:\Users\mraba\source\repos\Projects\DVLD v.0.1\Extensions\obj\Debug\HelperClasses.csproj.AssemblyReference.cache
+C:\Users\mraba\source\repos\Projects\DVLD v.0.1\Extensions\obj\Debug\HelperClasses.csproj.CoreCompileInputs.cache
+C:\Users\mraba\source\repos\Projects\DVLD v.0.1\Extensions\obj\Debug\HelperClasses.dll
+C:\Users\mraba\source\repos\Projects\DVLD v.0.1\Extensions\obj\Debug\HelperClasses.pdb
