@@ -92,7 +92,7 @@ namespace DVLD_DAL.Applications.ManageApplications.LocalDrivingLicenseApplicatio
                     ThirdName = reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName);
                     LastName = reader.GetString(reader.GetOrdinal("LastName"));
                     DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth"));
-                    Gender = reader.GetByte(reader.GetOrdinal("Gender")) is clsPersonData.Female_GenderValue;
+                    Gender = reader.GetBoolean(reader.GetOrdinal("Gender"));
                     Address = reader.GetString(reader.GetOrdinal("Address"));
                     Phone = reader.GetString(reader.GetOrdinal("Phone"));
                     Email = reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail);
@@ -366,7 +366,7 @@ namespace DVLD_DAL.Applications.ManageApplications.LocalDrivingLicenseApplicatio
                         ThirdName: reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName),
                         LastName: reader.GetString(reader.GetOrdinal("LastName")),
                         DateOfBirth: reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
-                        Gender: reader.GetByte(reader.GetOrdinal("Gender")) is clsPersonData.Female_GenderValue,
+                        Gender: reader.GetBoolean(reader.GetOrdinal("Gender")),
                         Address: reader.GetString(reader.GetOrdinal("Address")),
                         Phone: reader.GetString(reader.GetOrdinal("Phone")),
                         Email: reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail),
@@ -412,7 +412,7 @@ namespace DVLD_DAL.Applications.ManageApplications.LocalDrivingLicenseApplicatio
                         ThirdName: reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName),
                         LastName: reader.GetString(reader.GetOrdinal("LastName")),
                         DateOfBirth: reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
-                        Gender: reader.GetByte(reader.GetOrdinal("Gender")) is clsPersonData.Female_GenderValue,
+                        Gender: reader.GetBoolean(reader.GetOrdinal("Gender")),
                         Address: reader.GetString(reader.GetOrdinal("Address")),
                         Phone: reader.GetString(reader.GetOrdinal("Phone")),
                         Email: reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail),

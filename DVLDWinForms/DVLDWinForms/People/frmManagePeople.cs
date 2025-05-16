@@ -159,17 +159,17 @@ namespace DVLDWinForms.People
         {
             try
             {
-                const int widthOfEmailColumn = 205, widthOfNationalityColumn = 130;
+                const int widthOfEmailColumn = 210, widthOfNationalityColumn = 130;
                 const int widthOfDateColumn = 130, widthOfNameColumn = 110;
                 const int widthOfIdColumn = 95, widthOfNationalNoColumn = 95, widthOfPhoneColumn = 95;
 
-                dgvPeople.Columns["PersonID"]   .Width = widthOfIdColumn;
-                dgvPeople.Columns["NationalNo"] .Width = widthOfNationalNoColumn;
-                dgvPeople.Columns["FirstName"]  .Width = widthOfNameColumn;
-                dgvPeople.Columns["SecondName"] .Width = widthOfNameColumn;
-                dgvPeople.Columns["ThirdName"]  .Width = widthOfNameColumn;
-                dgvPeople.Columns["LastName"]   .Width = widthOfNameColumn;
-                dgvPeople.Columns["DateOfBirth"].Width = widthOfDateColumn;
+                dgvPeople.Columns["Person ID"]   .Width = widthOfIdColumn;
+                dgvPeople.Columns["National No"] .Width = widthOfNationalNoColumn;
+                dgvPeople.Columns["First Name"]  .Width = widthOfNameColumn;
+                dgvPeople.Columns["Second Name"] .Width = widthOfNameColumn;
+                dgvPeople.Columns["Third Name"]  .Width = widthOfNameColumn;
+                dgvPeople.Columns["Last Name"]   .Width = widthOfNameColumn;
+                dgvPeople.Columns["Date Of Birth"].Width = widthOfDateColumn;
                 dgvPeople.Columns["Phone"]      .Width = widthOfPhoneColumn;
                 dgvPeople.Columns["Email"]      .Width = widthOfEmailColumn;
                 dgvPeople.Columns["Nationality"].Width = widthOfNationalityColumn;

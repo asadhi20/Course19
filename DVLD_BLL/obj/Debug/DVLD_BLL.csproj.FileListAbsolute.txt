@@ -20,3 +20,14 @@ C:\Users\mraba\source\repos\Projects\DVLD v.0.1\DVLD_BLL\obj\Debug\DVLD_BLL.cspr
 C:\Users\mraba\source\repos\Projects\DVLD v.0.1\DVLD_BLL\obj\Debug\DVLD_BLL.csproj.Up2Date
 C:\Users\mraba\source\repos\Projects\DVLD v.0.1\DVLD_BLL\obj\Debug\DVLD_BLL.dll
 C:\Users\mraba\source\repos\Projects\DVLD v.0.1\DVLD_BLL\obj\Debug\DVLD_BLL.pdb
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLD_BLL\bin\Debug\DVLD_BLL.dll
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLD_BLL\bin\Debug\DVLD_BLL.pdb
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLD_BLL\bin\Debug\DVLD_DAL.dll
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLD_BLL\bin\Debug\HelperClasses.dll
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLD_BLL\bin\Debug\DVLD_DAL.pdb
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLD_BLL\bin\Debug\HelperClasses.pdb
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLD_BLL\obj\Debug\DVLD_BLL.csproj.AssemblyReference.cache
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLD_BLL\obj\Debug\DVLD_BLL.csproj.CoreCompileInputs.cache
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLD_BLL\obj\Debug\DVLD_BLL.csproj.Up2Date
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLD_BLL\obj\Debug\DVLD_BLL.dll
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLD_BLL\obj\Debug\DVLD_BLL.pdb

@@ -3,11 +3,30 @@
   "WorkspaceRootPath": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{282DACE6-8A5E-4BA4-B887-D6C073A9D521}|DVLDWinForms\\DVLDWinForms.csproj|C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\dvldwinforms\\applications\\manageapplications\\localdrivinglicenseapplications\\sechdluetests\\frmsechdulevisiontest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{282DACE6-8A5E-4BA4-B887-D6C073A9D521}|DVLDWinForms\\DVLDWinForms.csproj|solutionrelative:dvldwinforms\\applications\\manageapplications\\localdrivinglicenseapplications\\sechdluetests\\frmsechdulevisiontest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB815FA5-F61A-49EC-8A51-F05AB04901C4}|..\\DVLD_DAL\\DVLD_DAL.csproj|c:\\users\\mraba\\source\\repos\\my_github_projects\\course19\\dvld_dal\\people\\clspersondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{282DACE6-8A5E-4BA4-B887-D6C073A9D521}|DVLDWinForms\\DVLDWinForms.csproj|c:\\users\\mraba\\source\\repos\\my_github_projects\\course19\\dvldwinforms\\dvldwinforms\\applications\\usercontrols\\ucsechdule_resechduletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CB815FA5-F61A-49EC-8A51-F05AB04901C4}|..\\DVLD_DAL\\DVLD_DAL.csproj|c:\\users\\mraba\\source\\repos\\my_github_projects\\course19\\dvld_dal\\users\\clsuserdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{398C06B2-60B0-4679-A8F2-315C8D021533}|..\\DVLD_BLL\\DVLD_BLL.csproj|c:\\users\\mraba\\source\\repos\\my_github_projects\\course19\\dvld_bll\\people\\clsperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{282DACE6-8A5E-4BA4-B887-D6C073A9D521}|DVLDWinForms\\DVLDWinForms.csproj|C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\dvldwinforms\\applications\\usercontrols\\ucsechdule_resechduletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{282DACE6-8A5E-4BA4-B887-D6C073A9D521}|DVLDWinForms\\DVLDWinForms.csproj|solutionrelative:dvldwinforms\\applications\\usercontrols\\ucsechdule_resechduletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{282DACE6-8A5E-4BA4-B887-D6C073A9D521}|DVLDWinForms\\DVLDWinForms.csproj|C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\dvldwinforms\\users\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{282DACE6-8A5E-4BA4-B887-D6C073A9D521}|DVLDWinForms\\DVLDWinForms.csproj|solutionrelative:dvldwinforms\\users\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1CCFD69-DA29-4CA5-BCB2-67C4A3051215}|..\\Extensions\\HelperClasses.csproj|c:\\users\\mraba\\source\\repos\\my_github_projects\\course19\\extensions\\extensions\\clssqldbexecutor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1CCFD69-DA29-4CA5-BCB2-67C4A3051215}|..\\Extensions\\HelperClasses.csproj|c:\\users\\mraba\\source\\repos\\my_github_projects\\course19\\extensions\\helper classes\\winregistry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{282DACE6-8A5E-4BA4-B887-D6C073A9D521}|DVLDWinForms\\DVLDWinForms.csproj|C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\dvldwinforms\\applications\\usercontrols\\ucsechdule_resechduletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{282DACE6-8A5E-4BA4-B887-D6C073A9D521}|DVLDWinForms\\DVLDWinForms.csproj|solutionrelative:dvldwinforms\\applications\\usercontrols\\ucsechdule_resechduletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,8 +34,14 @@
       "RelativeMoniker": "D:0:0:{282DACE6-8A5E-4BA4-B887-D6C073A9D521}|DVLDWinForms\\DVLDWinForms.csproj|solutionrelative:dvldwinforms\\applications\\manageapplications\\localdrivinglicenseapplications\\sechdluetests\\frmsechdulevisiontest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{282DACE6-8A5E-4BA4-B887-D6C073A9D521}|DVLDWinForms\\DVLDWinForms.csproj|C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\dvldwinforms\\applications\\usercontrols\\ucsechdule_resechduletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{282DACE6-8A5E-4BA4-B887-D6C073A9D521}|DVLDWinForms\\DVLDWinForms.csproj|solutionrelative:dvldwinforms\\applications\\usercontrols\\ucsechdule_resechduletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{282DACE6-8A5E-4BA4-B887-D6C073A9D521}|DVLDWinForms\\DVLDWinForms.csproj|C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\dvldwinforms\\applications\\manageapplications\\localdrivinglicenseapplications\\sechdluetests\\frmsechdulevisiontest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{282DACE6-8A5E-4BA4-B887-D6C073A9D521}|DVLDWinForms\\DVLDWinForms.csproj|solutionrelative:dvldwinforms\\applications\\manageapplications\\localdrivinglicenseapplications\\sechdluetests\\frmsechdulevisiontest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{398C06B2-60B0-4679-A8F2-315C8D021533}|..\\DVLD_BLL\\DVLD_BLL.csproj|c:\\users\\mraba\\source\\repos\\my_github_projects\\course19\\dvld_bll\\applications\\manageapplications\\localdrivinglicenseapplications\\clslocaldrivinglicenseapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{398C06B2-60B0-4679-A8F2-315C8D021533}|..\\DVLD_BLL\\DVLD_BLL.csproj|c:\\users\\mraba\\source\\repos\\my_github_projects\\course19\\dvld_bll\\applications\\manageapplications\\localdrivinglicenseapplications\\sechduletests\\clssechduletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{282DACE6-8A5E-4BA4-B887-D6C073A9D521}|DVLDWinForms\\DVLDWinForms.csproj|C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\dvldwinforms\\applications\\manageapplications\\localdrivinglicenseapplications\\sechdluetests\\frmvisiontestappointments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -45,33 +70,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{282DACE6-8A5E-4BA4-B887-D6C073A9D521}|DVLDWinForms\\DVLDWinForms.csproj|C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\dvldwinforms\\applications\\usercontrols\\ucapplicationbasicinfocard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{282DACE6-8A5E-4BA4-B887-D6C073A9D521}|DVLDWinForms\\DVLDWinForms.csproj|solutionrelative:dvldwinforms\\applications\\usercontrols\\ucapplicationbasicinfocard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\clsLocalDrivingLicenseApplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_DAL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\clsLocalDrivingLicenseApplicationData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechduleTests\\clsSechduleTest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_DAL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechduleTests\\clsSechduleTestData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_DAL\\Applications\\ManageApplications\\clsApplicationData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Applications\\ManageApplications\\clsApplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mraba\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_DAL\\Applications\\ManageApplications\\clsApplicationData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mraba\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Users\\clsUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mraba\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Applications\\ManageApplications\\clsApplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -81,7 +79,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
@@ -98,13 +96,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "ucSechdule_ResechduleTest.cs",
               "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\DVLDWinForms\\Applications\\UserControls\\ucSechdule_ResechduleTest.cs",
               "RelativeDocumentMoniker": "DVLDWinForms\\Applications\\UserControls\\ucSechdule_ResechduleTest.cs",
               "ToolTip": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\DVLDWinForms\\Applications\\UserControls\\ucSechdule_ResechduleTest.cs",
               "RelativeToolTip": "DVLDWinForms\\Applications\\UserControls\\ucSechdule_ResechduleTest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAwwEsAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-20T02:28:02.165Z",
               "IsPinned": true,
@@ -112,7 +110,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "frmSechduleVisionTest.cs [Design]",
               "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\DVLDWinForms\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechdlueTests\\frmSechduleVisionTest.cs",
               "RelativeDocumentMoniker": "DVLDWinForms\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechdlueTests\\frmSechduleVisionTest.cs",
@@ -120,74 +118,24 @@
               "RelativeToolTip": "DVLDWinForms\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechdlueTests\\frmSechduleVisionTest.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-20T00:28:59.48Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
               "Title": "frmSechduleVisionTest.cs",
               "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\DVLDWinForms\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechdlueTests\\frmSechduleVisionTest.cs",
               "RelativeDocumentMoniker": "DVLDWinForms\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechdlueTests\\frmSechduleVisionTest.cs",
               "ToolTip": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\DVLDWinForms\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechdlueTests\\frmSechduleVisionTest.cs",
               "RelativeToolTip": "DVLDWinForms\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechdlueTests\\frmSechduleVisionTest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-19T23:29:28.137Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "clsLocalDrivingLicenseApplication.cs",
-              "DocumentMoniker": "C:\\Users\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\clsLocalDrivingLicenseApplication.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\clsLocalDrivingLicenseApplication.cs",
-              "ToolTip": "C:\\Users\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\clsLocalDrivingLicenseApplication.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\clsLocalDrivingLicenseApplication.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T02:27:14.579Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "clsLocalDrivingLicenseApplicationData.cs",
-              "DocumentMoniker": "C:\\Users\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_DAL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\clsLocalDrivingLicenseApplicationData.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_DAL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\clsLocalDrivingLicenseApplicationData.cs",
-              "ToolTip": "C:\\Users\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_DAL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\clsLocalDrivingLicenseApplicationData.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_DAL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\clsLocalDrivingLicenseApplicationData.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T02:27:32.484Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "clsSechduleTest.cs",
-              "DocumentMoniker": "C:\\Users\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechduleTests\\clsSechduleTest.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechduleTests\\clsSechduleTest.cs",
-              "ToolTip": "C:\\Users\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechduleTests\\clsSechduleTest.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechduleTests\\clsSechduleTest.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T15:49:36.482Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "clsSechduleTestData.cs",
-              "DocumentMoniker": "C:\\Users\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_DAL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechduleTests\\clsSechduleTestData.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_DAL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechduleTests\\clsSechduleTestData.cs",
-              "ToolTip": "C:\\Users\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_DAL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechduleTests\\clsSechduleTestData.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_DAL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechduleTests\\clsSechduleTestData.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T15:50:22.836Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "frmVisionTestAppointments.cs [Design]",
               "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\DVLDWinForms\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechdlueTests\\frmVisionTestAppointments.cs",
               "RelativeDocumentMoniker": "DVLDWinForms\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechdlueTests\\frmVisionTestAppointments.cs",
@@ -199,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 15,
               "Title": "frmVisionTestAppointments.cs",
               "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\DVLDWinForms\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechdlueTests\\frmVisionTestAppointments.cs",
               "RelativeDocumentMoniker": "DVLDWinForms\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechdlueTests\\frmVisionTestAppointments.cs",
@@ -211,76 +159,112 @@
               "IsPinned": true
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "clsApplicationData.cs",
-              "DocumentMoniker": "C:\\Users\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_DAL\\Applications\\ManageApplications\\clsApplicationData.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_DAL\\Applications\\ManageApplications\\clsApplicationData.cs",
-              "ToolTip": "C:\\Users\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_DAL\\Applications\\ManageApplications\\clsApplicationData.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_DAL\\Applications\\ManageApplications\\clsApplicationData.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T06:50:28.193Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "clsApplication.cs",
-              "DocumentMoniker": "C:\\Users\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Applications\\ManageApplications\\clsApplication.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Applications\\ManageApplications\\clsApplication.cs",
-              "ToolTip": "C:\\Users\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Applications\\ManageApplications\\clsApplication.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Mr Abbas Ahmed\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Applications\\ManageApplications\\clsApplication.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T10:37:00.548Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "clsApplicationData.cs",
-              "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_DAL\\Applications\\ManageApplications\\clsApplicationData.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Projects\\DVLD v.0.1\\DVLD_DAL\\Applications\\ManageApplications\\clsApplicationData.cs",
-              "ToolTip": "C:\\Users\\mraba\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_DAL\\Applications\\ManageApplications\\clsApplicationData.cs",
-              "RelativeToolTip": "..\\..\\..\\Projects\\DVLD v.0.1\\DVLD_DAL\\Applications\\ManageApplications\\clsApplicationData.cs",
-              "ViewState": "AgIAALoAAAAAAAAAAAAQwNIAAABJAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "clsPersonData.cs",
+              "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLD_DAL\\People\\clsPersonData.cs",
+              "RelativeDocumentMoniker": "..\\DVLD_DAL\\People\\clsPersonData.cs",
+              "ToolTip": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLD_DAL\\People\\clsPersonData.cs",
+              "RelativeToolTip": "..\\DVLD_DAL\\People\\clsPersonData.cs",
+              "ViewState": "AgIAAIUBAAAAAAAAAAAqwPMBAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T15:29:55.829Z"
+              "WhenOpened": "2025-05-16T05:24:07.974Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "clsUser.cs",
-              "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Users\\clsUser.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Projects\\DVLD v.0.1\\DVLD_BLL\\Users\\clsUser.cs",
-              "ToolTip": "C:\\Users\\mraba\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Users\\clsUser.cs",
-              "RelativeToolTip": "..\\..\\..\\Projects\\DVLD v.0.1\\DVLD_BLL\\Users\\clsUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "WinRegistry.cs",
+              "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\Extensions\\Helper Classes\\WinRegistry.cs",
+              "RelativeDocumentMoniker": "..\\Extensions\\Helper Classes\\WinRegistry.cs",
+              "ToolTip": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\Extensions\\Helper Classes\\WinRegistry.cs",
+              "RelativeToolTip": "..\\Extensions\\Helper Classes\\WinRegistry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T15:29:53.87Z"
+              "WhenOpened": "2025-05-16T04:44:00.901Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "clsApplication.cs",
-              "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Applications\\ManageApplications\\clsApplication.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Projects\\DVLD v.0.1\\DVLD_BLL\\Applications\\ManageApplications\\clsApplication.cs",
-              "ToolTip": "C:\\Users\\mraba\\source\\repos\\Projects\\DVLD v.0.1\\DVLD_BLL\\Applications\\ManageApplications\\clsApplication.cs",
-              "RelativeToolTip": "..\\..\\..\\Projects\\DVLD v.0.1\\DVLD_BLL\\Applications\\ManageApplications\\clsApplication.cs",
-              "ViewState": "AgIAAJ4AAAAAAAAAAAAqwDoBAAAWAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "frmLogin.cs",
+              "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\DVLDWinForms\\Users\\frmLogin.cs",
+              "RelativeDocumentMoniker": "DVLDWinForms\\Users\\frmLogin.cs",
+              "ToolTip": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\DVLDWinForms\\Users\\frmLogin.cs",
+              "RelativeToolTip": "DVLDWinForms\\Users\\frmLogin.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAIAwwBgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T14:50:45.951Z"
+              "WhenOpened": "2025-05-16T04:42:43.986Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
+              "Title": "clsUserData.cs",
+              "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLD_DAL\\Users\\clsUserData.cs",
+              "RelativeDocumentMoniker": "..\\DVLD_DAL\\Users\\clsUserData.cs",
+              "ToolTip": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLD_DAL\\Users\\clsUserData.cs",
+              "RelativeToolTip": "..\\DVLD_DAL\\Users\\clsUserData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T04:17:37.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "clsSqlDBExecutor.cs",
+              "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\Extensions\\Extensions\\clsSqlDBExecutor.cs",
+              "RelativeDocumentMoniker": "..\\Extensions\\Extensions\\clsSqlDBExecutor.cs",
+              "ToolTip": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\Extensions\\Extensions\\clsSqlDBExecutor.cs",
+              "RelativeToolTip": "..\\Extensions\\Extensions\\clsSqlDBExecutor.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAMwIgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T04:10:52.191Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "clsPerson.cs",
+              "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLD_BLL\\People\\clsPerson.cs",
+              "RelativeDocumentMoniker": "..\\DVLD_BLL\\People\\clsPerson.cs",
+              "ToolTip": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLD_BLL\\People\\clsPerson.cs",
+              "RelativeToolTip": "..\\DVLD_BLL\\People\\clsPerson.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAuwMIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T20:15:31.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "clsSechduleTest.cs",
+              "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLD_BLL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechduleTests\\clsSechduleTest.cs",
+              "RelativeDocumentMoniker": "..\\DVLD_BLL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechduleTests\\clsSechduleTest.cs",
+              "ToolTip": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLD_BLL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechduleTests\\clsSechduleTest.cs",
+              "RelativeToolTip": "..\\DVLD_BLL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\SechduleTests\\clsSechduleTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcBAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T19:29:22.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "clsLocalDrivingLicenseApplication.cs",
+              "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLD_BLL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\clsLocalDrivingLicenseApplication.cs",
+              "RelativeDocumentMoniker": "..\\DVLD_BLL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\clsLocalDrivingLicenseApplication.cs",
+              "ToolTip": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLD_BLL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\clsLocalDrivingLicenseApplication.cs",
+              "RelativeToolTip": "..\\DVLD_BLL\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\clsLocalDrivingLicenseApplication.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAcwF4AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T19:28:34.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "ucSechdule_ResechduleTest.Designer.cs",
               "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\DVLDWinForms\\Applications\\UserControls\\ucSechdule_ResechduleTest.Designer.cs",
               "RelativeDocumentMoniker": "DVLDWinForms\\Applications\\UserControls\\ucSechdule_ResechduleTest.Designer.cs",
@@ -288,22 +272,24 @@
               "RelativeToolTip": "DVLDWinForms\\Applications\\UserControls\\ucSechdule_ResechduleTest.Designer.cs",
               "ViewState": "AgIAAFgAAAAAAAAAAAAmwGwAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T14:45:34.087Z"
+              "WhenOpened": "2025-04-18T14:45:34.087Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 14,
               "Title": "frmLocalDrivingLicenseApplications.cs [Design]",
               "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\DVLDWinForms\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\frmLocalDrivingLicenseApplications.cs",
               "RelativeDocumentMoniker": "DVLDWinForms\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\frmLocalDrivingLicenseApplications.cs",
-              "ToolTip": "C:\\Users\\mraba\\source\\repos\\Projects\\DVLD v.0.1\\DVLDWinForms\\DVLDWinForms\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\frmLocalDrivingLicenseApplications.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\Projects\\DVLD v.0.1\\DVLDWinForms\\DVLDWinForms\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\frmLocalDrivingLicenseApplications.cs [Design]",
+              "ToolTip": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\DVLDWinForms\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\frmLocalDrivingLicenseApplications.cs [Design]",
+              "RelativeToolTip": "DVLDWinForms\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\frmLocalDrivingLicenseApplications.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T14:34:03.422Z"
+              "WhenOpened": "2025-04-18T14:34:03.422Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 18,
               "Title": "ucApplicationBasicInfoCard.cs",
               "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\DVLDWinForms\\Applications\\UserControls\\ucApplicationBasicInfoCard.cs",
               "RelativeDocumentMoniker": "DVLDWinForms\\Applications\\UserControls\\ucApplicationBasicInfoCard.cs",
@@ -311,11 +297,12 @@
               "RelativeToolTip": "DVLDWinForms\\Applications\\UserControls\\ucApplicationBasicInfoCard.cs",
               "ViewState": "AgIAACoAAAAAAAAAAIAwwDwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T18:51:59.059Z"
+              "WhenOpened": "2025-03-26T18:51:59.059Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "frmLocalDrivingLicenseApplications.cs",
               "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\DVLDWinForms\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\frmLocalDrivingLicenseApplications.cs",
               "RelativeDocumentMoniker": "DVLDWinForms\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\frmLocalDrivingLicenseApplications.cs",
@@ -323,11 +310,12 @@
               "RelativeToolTip": "DVLDWinForms\\Applications\\ManageApplications\\LocalDrivingLicenseApplications\\frmLocalDrivingLicenseApplications.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAUwLEAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T06:42:22.75Z"
+              "WhenOpened": "2025-03-25T06:42:22.75Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 17,
               "Title": "frmNewLocalDrivingLicenseApplication.cs",
               "DocumentMoniker": "C:\\Users\\mraba\\source\\repos\\My_GItHub_Projects\\Course19\\DVLDWinForms\\DVLDWinForms\\Applications\\DivingLicenseServices\\NewDrivingLicense\\frmNewLocalDrivingLicenseApplication.cs",
               "RelativeDocumentMoniker": "DVLDWinForms\\Applications\\DivingLicenseServices\\NewDrivingLicense\\frmNewLocalDrivingLicenseApplication.cs",
@@ -335,7 +323,8 @@
               "RelativeToolTip": "DVLDWinForms\\Applications\\DivingLicenseServices\\NewDrivingLicense\\frmNewLocalDrivingLicenseApplication.cs",
               "ViewState": "AgIAAKgAAAAAAAAAAADgv7wAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T14:42:48.632Z"
+              "WhenOpened": "2025-03-24T14:42:48.632Z",
+              "EditorCaption": ""
             }
           ]
         }

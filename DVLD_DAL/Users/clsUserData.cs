@@ -11,10 +11,11 @@ using DVLD_DAL.People;
 
 namespace DVLD_DAL.Users
 {
-    public sealed class clsUserData
+    public static class clsUserData
     {
-        #region Private Const Fields
-        internal const int ActiveUserValue = 1;
+        #region Internal Const Fields
+        internal const int _UserNameColumnSize = 20;
+        internal const int _PasswordColumnSize = 20;
         #endregion
 
         #region Synchronous Methods
@@ -28,8 +29,8 @@ namespace DVLD_DAL.Users
 
             SqlParameter[] parameters = new SqlParameter[] {
                 new SqlParameter("@PersonID", SqlDbType.Int) { Value = PersonID },
-                new SqlParameter("@UserName", SqlDbType.NVarChar, 20) { Value = UserName },
-                new SqlParameter("@Password", SqlDbType.NVarChar, 20) { Value = Password },
+                new SqlParameter("@UserName", SqlDbType.NVarChar, _UserNameColumnSize) { Value = UserName },
+                new SqlParameter("@Password", SqlDbType.NVarChar, _PasswordColumnSize) { Value = Password },
                 new SqlParameter("@IsActive", SqlDbType.Bit) { Value = IsActive }
             };
 
@@ -60,14 +61,14 @@ namespace DVLD_DAL.Users
                     PersonID = reader.GetInt32(reader.GetOrdinal("PersonID"));
                     UserName = reader.GetString(reader.GetOrdinal("UserName"));
                     Password = reader.GetString(reader.GetOrdinal("Password"));
-                    IsActive = reader.GetByte(reader.GetOrdinal("IsActive")) is ActiveUserValue;
+                    IsActive = reader.GetBoolean(reader.GetOrdinal("IsActive"));
                     NationalNo = reader.GetString(reader.GetOrdinal("NationalNo"));
                     FirstName = reader.GetString(reader.GetOrdinal("FirstName"));
                     SecondName = reader.GetString(reader.GetOrdinal("SecondName"));
                     ThirdName = reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName);
                     LastName = reader.GetString(reader.GetOrdinal("LastName"));
                     DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth"));
-                    Gender = reader.GetByte(reader.GetOrdinal("Gender")) is clsPersonData.Female_GenderValue;
+                    Gender = reader.GetBoolean(reader.GetOrdinal("Gender"));
                     Address = reader.GetString(reader.GetOrdinal("Address"));
                     Phone = reader.GetString(reader.GetOrdinal("Phone"));
                     Email = reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail);
@@ -102,14 +103,14 @@ namespace DVLD_DAL.Users
                     PersonID = reader.GetInt32(reader.GetOrdinal("PersonID"));
                     UserName = reader.GetString(reader.GetOrdinal("UserName"));
                     Password = reader.GetString(reader.GetOrdinal("Password"));
-                    IsActive = reader.GetByte(reader.GetOrdinal("IsActive")) is ActiveUserValue;
+                    IsActive = reader.GetBoolean(reader.GetOrdinal("IsActive"));
                     NationalNo = reader.GetString(reader.GetOrdinal("NationalNo"));
                     FirstName = reader.GetString(reader.GetOrdinal("FirstName"));
                     SecondName = reader.GetString(reader.GetOrdinal("SecondName"));
                     ThirdName = reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName);
                     LastName = reader.GetString(reader.GetOrdinal("LastName"));
                     DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth"));
-                    Gender = reader.GetByte(reader.GetOrdinal("Gender")) is clsPersonData.Female_GenderValue;
+                    Gender = reader.GetBoolean(reader.GetOrdinal("Gender"));
                     Address = reader.GetString(reader.GetOrdinal("Address"));
                     Phone = reader.GetString(reader.GetOrdinal("Phone"));
                     Email = reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail);
@@ -133,8 +134,8 @@ namespace DVLD_DAL.Users
                                    WHERE UserName = @UserName AND Password = @Password;";
 
             SqlParameter[] parameters = new SqlParameter[] { 
-                new SqlParameter("@UserName", SqlDbType.NVarChar, 20) { Value = UserName }, 
-                new SqlParameter("@Password", SqlDbType.NVarChar, 20) { Value = Password } 
+                new SqlParameter("@UserName", SqlDbType.NVarChar, _UserNameColumnSize) { Value = UserName }, 
+                new SqlParameter("@Password", SqlDbType.NVarChar, _PasswordColumnSize) { Value = Password } 
             };
 
             using (SqlDataReader reader = clsSqlDBExecutor.ExecuteReader(clsDBSettings.CnnString("DVLD_DB"), query, parameters))
@@ -145,14 +146,14 @@ namespace DVLD_DAL.Users
 
                     UserID = reader.GetInt32(reader.GetOrdinal("UserID"));
                     PersonID = reader.GetInt32(reader.GetOrdinal("PersonID"));
-                    IsActive = reader.GetByte(reader.GetOrdinal("IsActive")) is ActiveUserValue;
+                    IsActive = reader.GetBoolean(reader.GetOrdinal("IsActive"));
                     NationalNo = reader.GetString(reader.GetOrdinal("NationalNo"));
                     FirstName = reader.GetString(reader.GetOrdinal("FirstName"));
                     SecondName = reader.GetString(reader.GetOrdinal("SecondName"));
                     ThirdName = reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName);
                     LastName = reader.GetString(reader.GetOrdinal("LastName"));
                     DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth"));
-                    Gender = reader.GetByte(reader.GetOrdinal("Gender")) is clsPersonData.Female_GenderValue;
+                    Gender = reader.GetBoolean(reader.GetOrdinal("Gender"));
                     Address = reader.GetString(reader.GetOrdinal("Address"));
                     Phone = reader.GetString(reader.GetOrdinal("Phone"));
                     Email = reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail);
@@ -226,7 +227,7 @@ namespace DVLD_DAL.Users
         {
             const string query = "SELECT 1 FROM Users WHERE UserName = @UserName;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@UserName", SqlDbType.NVarChar, 20) { Value = UserName } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@UserName", SqlDbType.NVarChar, _UserNameColumnSize) { Value = UserName } };
 
             return clsSqlDBExecutor.ExecuteScalar(clsDBSettings.CnnString("DVLD_DB"), query, parameters) != null;
         }
@@ -236,8 +237,8 @@ namespace DVLD_DAL.Users
             const string query = "SELECT 1 FROM Users WHERE UserName = @UserName AND Password = @Password;";
 
             SqlParameter[] parameters = new SqlParameter[] { 
-                new SqlParameter("@UserName", SqlDbType.NVarChar, 20) { Value = UserName },
-                new SqlParameter("@Password", SqlDbType.NVarChar, 20) { Value = Password },
+                new SqlParameter("@UserName", SqlDbType.NVarChar, _UserNameColumnSize) { Value = UserName },
+                new SqlParameter("@Password", SqlDbType.NVarChar, _PasswordColumnSize) { Value = Password },
             };
 
             return clsSqlDBExecutor.ExecuteScalar(clsDBSettings.CnnString("DVLD_DB"), query, parameters) != null;
@@ -252,8 +253,8 @@ namespace DVLD_DAL.Users
                                    END;";
 
             SqlParameter[] parameters = new SqlParameter[] { 
-                new SqlParameter("@UserName", SqlDbType.NVarChar, 20) { Value = UserName },  
-                new SqlParameter("@Password", SqlDbType.NVarChar, 20) { Value = Password },  
+                new SqlParameter("@UserName", SqlDbType.NVarChar, _UserNameColumnSize) { Value = UserName },  
+                new SqlParameter("@Password", SqlDbType.NVarChar, _PasswordColumnSize) { Value = Password },  
             };
 
             object result = clsSqlDBExecutor.ExecuteScalar(clsDBSettings.CnnString("DVLD_DB"), query, parameters);
@@ -280,8 +281,8 @@ namespace DVLD_DAL.Users
             SqlParameter[] parameters = new SqlParameter[] {
                 new SqlParameter("@UserID", SqlDbType.Int) { Value = UserID },
                 new SqlParameter("@PersonID", SqlDbType.Int) { Value = PersonID },
-                new SqlParameter("@UserName", SqlDbType.NVarChar, 20) { Value = UserName },
-                new SqlParameter("@Password", SqlDbType.NVarChar, 20) { Value = Password },
+                new SqlParameter("@UserName", SqlDbType.NVarChar, _UserNameColumnSize) { Value = UserName },
+                new SqlParameter("@Password", SqlDbType.NVarChar, _PasswordColumnSize) { Value = Password },
                 new SqlParameter("@IsActive", SqlDbType.Bit) { Value = IsActive }
             };
 
@@ -312,8 +313,8 @@ namespace DVLD_DAL.Users
             const string query = "UPDATE Users SET IsActive = 1 WHERE UserName = @UserName AND Password = @Password; SELECT @@ROWCOUNT;";
 
             SqlParameter[] parameters = new SqlParameter[] {
-                new SqlParameter("@UserName", SqlDbType.NVarChar, 20) { Value = UserName },
-                new SqlParameter("@Password", SqlDbType.NVarChar, 20) { Value = Password },
+                new SqlParameter("@UserName", SqlDbType.NVarChar, _UserNameColumnSize) { Value = UserName },
+                new SqlParameter("@Password", SqlDbType.NVarChar, _PasswordColumnSize) { Value = Password },
             };
             return clsSqlDBExecutor.ExecuteNonQuery(clsDBSettings.CnnString("DVLD_DB"), query, parameters) > 0;
         }
@@ -323,8 +324,8 @@ namespace DVLD_DAL.Users
             const string query = "UPDATE Users SET IsActive = 0 WHERE UserName = @UserName AND Password = @Password; SELECT @@ROWCOUNT;";
 
             SqlParameter[] parameters = new SqlParameter[] {
-                new SqlParameter("@UserName", SqlDbType.NVarChar, 20) { Value = UserName },
-                new SqlParameter("@Password", SqlDbType.NVarChar, 20) { Value = Password },
+                new SqlParameter("@UserName", SqlDbType.NVarChar, _UserNameColumnSize) { Value = UserName },
+                new SqlParameter("@Password", SqlDbType.NVarChar, _PasswordColumnSize) { Value = Password },
             };
             return clsSqlDBExecutor.ExecuteNonQuery(clsDBSettings.CnnString("DVLD_DB"), query, parameters) > 0;
         }
@@ -346,8 +347,8 @@ namespace DVLD_DAL.Users
             const string query = "DELETE FROM Users WHERE UserName = @UserName AND Password = @Password;";
 
             SqlParameter[] parameters = new SqlParameter[] { 
-                new SqlParameter("@UserName", SqlDbType.NVarChar, 20) { Value = UserName },
-                new SqlParameter("@Password", SqlDbType.NVarChar, 20) { Value = Password },
+                new SqlParameter("@UserName", SqlDbType.NVarChar, _UserNameColumnSize) { Value = UserName },
+                new SqlParameter("@Password", SqlDbType.NVarChar, _PasswordColumnSize) { Value = Password },
             };
 
             return clsSqlDBExecutor.ExecuteNonQuery(clsDBSettings.CnnString("DVLD_DB"), query, parameters) > 0;
@@ -368,8 +369,8 @@ namespace DVLD_DAL.Users
 
             SqlParameter[] parameters = new SqlParameter[] {
                 new SqlParameter("@PersonID", SqlDbType.Int) { Value = PersonID },
-                new SqlParameter("@UserName", SqlDbType.NVarChar, 20) { Value = UserName },
-                new SqlParameter("@Password", SqlDbType.NVarChar, 20) { Value = Password },
+                new SqlParameter("@UserName", SqlDbType.NVarChar, _UserNameColumnSize) { Value = UserName },
+                new SqlParameter("@Password", SqlDbType.NVarChar, _PasswordColumnSize) { Value = Password },
                 new SqlParameter("@IsActive", SqlDbType.Bit) { Value = IsActive }
             };
 
@@ -400,14 +401,14 @@ namespace DVLD_DAL.Users
                     return (PersonID: reader.GetInt32(reader.GetOrdinal("PersonID")),
                         UserName: reader.GetString(reader.GetOrdinal("UserName")),
                         Password: reader.GetString(reader.GetOrdinal("Password")),
-                        IsActive: reader.GetByte(reader.GetOrdinal("IsActive")) is ActiveUserValue,
+                        IsActive: reader.GetBoolean(reader.GetOrdinal("IsActive")),
                         NationalNo: reader.GetString(reader.GetOrdinal("NationalNo")),
                         FirstName: reader.GetString(reader.GetOrdinal("FirstName")),
                         SecondName: reader.GetString(reader.GetOrdinal("SecondName")),
                         ThirdName: reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName),
                         LastName: reader.GetString(reader.GetOrdinal("LastName")),
                         DateOfBirth: reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
-                        Gender: reader.GetByte(reader.GetOrdinal("Gender")) is clsPersonData.Female_GenderValue,
+                        Gender: reader.GetBoolean(reader.GetOrdinal("Gender")),
                         Address: reader.GetString(reader.GetOrdinal("Address")),
                         Phone: reader.GetString(reader.GetOrdinal("Phone")),
                         Email: reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail),
@@ -444,14 +445,14 @@ namespace DVLD_DAL.Users
                     return (UserID: reader.GetInt32(reader.GetOrdinal("UserID")),
                         UserName: reader.GetString(reader.GetOrdinal("UserName")),
                         Password: reader.GetString(reader.GetOrdinal("Password")),
-                        IsActive: reader.GetByte(reader.GetOrdinal("IsActive")) is ActiveUserValue,
+                        IsActive: reader.GetBoolean(reader.GetOrdinal("IsActive")),
                         NationalNo: reader.GetString(reader.GetOrdinal("NationalNo")),
                         FirstName: reader.GetString(reader.GetOrdinal("FirstName")),
                         SecondName: reader.GetString(reader.GetOrdinal("SecondName")),
                         ThirdName: reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName),
                         LastName: reader.GetString(reader.GetOrdinal("LastName")),
                         DateOfBirth: reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
-                        Gender: reader.GetByte(reader.GetOrdinal("Gender")) is clsPersonData.Female_GenderValue,
+                        Gender: reader.GetBoolean(reader.GetOrdinal("Gender")),
                         Address: reader.GetString(reader.GetOrdinal("Address")),
                         Phone: reader.GetString(reader.GetOrdinal("Phone")),
                         Email: reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail),
@@ -475,8 +476,8 @@ namespace DVLD_DAL.Users
                                    WHERE UserName = @UserName AND Password = @Password;";
 
             SqlParameter[] parameters = new SqlParameter[] {
-                new SqlParameter("@UserName", SqlDbType.NVarChar, 20) { Value = UserName },
-                new SqlParameter("@Password", SqlDbType.NVarChar, 20) { Value = Password }
+                new SqlParameter("@UserName", SqlDbType.NVarChar, _UserNameColumnSize) { Value = UserName },
+                new SqlParameter("@Password", SqlDbType.NVarChar, _PasswordColumnSize) { Value = Password }
             };
 
             using (SqlDataReader reader = await clsSqlDBExecutor.ExecuteReaderAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters))
@@ -485,36 +486,16 @@ namespace DVLD_DAL.Users
                 {
                     int indThirdName = reader.GetOrdinal("ThirdName"), indEmail = reader.GetOrdinal("Email"), indImagePath = reader.GetOrdinal("ImagePath");
 
-                    try
-                    {
-                        var u = reader.GetInt32(reader.GetOrdinal("UserID"));
-                        var PersonID = reader.GetInt32(reader.GetOrdinal("PersonID"));
-                        var IsActive = reader.GetByte(reader.GetOrdinal("IsActive")) is ActiveUserValue;
-                        var NationalNo = reader.GetString(reader.GetOrdinal("NationalNo"));
-                        var FirstName = reader.GetString(reader.GetOrdinal("FirstName"));
-                        var SecondName = reader.GetString(reader.GetOrdinal("SecondName"));
-                        var ThirdName = reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName);
-                        var LastName = reader.GetString(reader.GetOrdinal("LastName"));
-                        var DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth"));
-                        var Gender = reader.GetByte(reader.GetOrdinal("Gender")) is clsPersonData.Female_GenderValue;
-                        var Address = reader.GetString(reader.GetOrdinal("Address"));
-                        var Phone = reader.GetString(reader.GetOrdinal("Phone"));
-                        var Email = reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail);
-                        var NationalityCountryID = reader.GetInt32(reader.GetOrdinal("NationalityCountryID"));
-                        var ImagePath = reader.IsDBNull(indImagePath) ? string.Empty : reader.GetString(indImagePath);
-                    }
-                    catch { }
-
                     return (UserID: reader.GetInt32(reader.GetOrdinal("UserID")),
                         PersonID: reader.GetInt32(reader.GetOrdinal("PersonID")),
-                        IsActive: reader.GetByte(reader.GetOrdinal("IsActive")) is ActiveUserValue,
+                        IsActive: reader.GetBoolean(reader.GetOrdinal("IsActive")),
                         NationalNo: reader.GetString(reader.GetOrdinal("NationalNo")),
                         FirstName: reader.GetString(reader.GetOrdinal("FirstName")),
                         SecondName: reader.GetString(reader.GetOrdinal("SecondName")),
                         ThirdName: reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName),
                         LastName: reader.GetString(reader.GetOrdinal("LastName")),
                         DateOfBirth: reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
-                        Gender: reader.GetByte(reader.GetOrdinal("Gender")) is clsPersonData.Female_GenderValue,
+                        Gender: reader.GetBoolean(reader.GetOrdinal("Gender")),
                         Address: reader.GetString(reader.GetOrdinal("Address")),
                         Phone: reader.GetString(reader.GetOrdinal("Phone")),
                         Email: reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail),
@@ -555,14 +536,14 @@ namespace DVLD_DAL.Users
                         PersonID: reader.GetInt32(reader.GetOrdinal("PersonID")),
                         UserName: reader.GetString(reader.GetOrdinal("UserName")),
                         Password: reader.GetString(reader.GetOrdinal("Password")),
-                        IsActive: reader.GetByte(reader.GetOrdinal("IsActive")) is ActiveUserValue,
+                        IsActive: reader.GetBoolean(reader.GetOrdinal("IsActive")),
                         NationalNo: reader.GetString(reader.GetOrdinal("NationalNo")),
                         FirstName: reader.GetString(reader.GetOrdinal("FirstName")),
                         SecondName: reader.GetString(reader.GetOrdinal("SecondName")),
                         ThirdName: reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName),
                         LastName: reader.GetString(reader.GetOrdinal("LastName")),
                         DateOfBirth: reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
-                        Gender: reader.GetByte(reader.GetOrdinal("Gender")) is clsPersonData.Female_GenderValue,
+                        Gender: reader.GetBoolean(reader.GetOrdinal("Gender")),
                         Address: reader.GetString(reader.GetOrdinal("Address")),
                         Phone: reader.GetString(reader.GetOrdinal("Phone")),
                         Email: reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail),
@@ -636,8 +617,8 @@ namespace DVLD_DAL.Users
             const string query = "SELECT 1 FROM Users WHERE UserName = @UserName AND Password = @Password;";
 
             SqlParameter[] parameters = new SqlParameter[] {
-                new SqlParameter("@UserName", SqlDbType.NVarChar, 20) { Value = UserName },
-                new SqlParameter("@Password", SqlDbType.NVarChar, 20) { Value = Password },
+                new SqlParameter("@UserName", SqlDbType.NVarChar, _UserNameColumnSize) { Value = UserName },
+                new SqlParameter("@Password", SqlDbType.NVarChar, _PasswordColumnSize) { Value = Password },
             };
 
             return await clsSqlDBExecutor.ExecuteScalarAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters) != null;
@@ -652,8 +633,8 @@ namespace DVLD_DAL.Users
                                    END;";
 
             SqlParameter[] parameters = new SqlParameter[] {
-                new SqlParameter("@UserName", SqlDbType.NVarChar, 20) { Value = UserName },
-                new SqlParameter("@Password", SqlDbType.NVarChar, 20) { Value = Password },
+                new SqlParameter("@UserName", SqlDbType.NVarChar, _UserNameColumnSize) { Value = UserName },
+                new SqlParameter("@Password", SqlDbType.NVarChar, _PasswordColumnSize) { Value = Password },
             };
 
             object result = await clsSqlDBExecutor.ExecuteScalarAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters);
@@ -679,8 +660,8 @@ namespace DVLD_DAL.Users
             SqlParameter[] parameters = new SqlParameter[] {
                 new SqlParameter("@UserID", SqlDbType.Int) { Value = UserID },
                 new SqlParameter("@PersonID", SqlDbType.Int) { Value = PersonID },
-                new SqlParameter("@UserName", SqlDbType.NVarChar, 20) { Value = UserName },
-                new SqlParameter("@Password", SqlDbType.NVarChar, 20) { Value = Password },
+                new SqlParameter("@UserName", SqlDbType.NVarChar, _UserNameColumnSize) { Value = UserName },
+                new SqlParameter("@Password", SqlDbType.NVarChar, _PasswordColumnSize) { Value = Password },
                 new SqlParameter("@IsActive", SqlDbType.Bit) { Value = IsActive }
             };
 
@@ -711,8 +692,8 @@ namespace DVLD_DAL.Users
             const string query = "UPDATE Users SET IsActive = 1 WHERE UserName = @UserName AND Password = @Password; SELECT @@ROWCOUNT;";
 
             SqlParameter[] parameters = new SqlParameter[] {
-                new SqlParameter("@UserName", SqlDbType.NVarChar, 20) { Value = UserName },
-                new SqlParameter("@Password", SqlDbType.NVarChar, 20) { Value = Password },
+                new SqlParameter("@UserName", SqlDbType.NVarChar, _UserNameColumnSize) { Value = UserName },
+                new SqlParameter("@Password", SqlDbType.NVarChar, _PasswordColumnSize) { Value = Password },
             };
             return await clsSqlDBExecutor.ExecuteNonQueryAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters) > 0;
         }
@@ -722,8 +703,8 @@ namespace DVLD_DAL.Users
             const string query = "UPDATE Users SET IsActive = 0 WHERE UserName = @UserName AND Password = @Password; SELECT @@ROWCOUNT;";
 
             SqlParameter[] parameters = new SqlParameter[] {
-                new SqlParameter("@UserName", SqlDbType.NVarChar, 20) { Value = UserName },
-                new SqlParameter("@Password", SqlDbType.NVarChar, 20) { Value = Password },
+                new SqlParameter("@UserName", SqlDbType.NVarChar, _UserNameColumnSize) { Value = UserName },
+                new SqlParameter("@Password", SqlDbType.NVarChar, _PasswordColumnSize) { Value = Password },
             };
             return await clsSqlDBExecutor.ExecuteNonQueryAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters) > 0;
         }
@@ -745,8 +726,8 @@ namespace DVLD_DAL.Users
             const string query = "DELETE FROM Users WHERE UserName = @UserName AND Password = @Password;";
 
             SqlParameter[] parameters = new SqlParameter[] { 
-                new SqlParameter("@UserName", SqlDbType.NVarChar, 20) { Value = UserName },
-                new SqlParameter("@Password", SqlDbType.NVarChar, 20) { Value = Password },
+                new SqlParameter("@UserName", SqlDbType.NVarChar, _UserNameColumnSize) { Value = UserName },
+                new SqlParameter("@Password", SqlDbType.NVarChar, _PasswordColumnSize) { Value = Password },
             };
 
             return await clsSqlDBExecutor.ExecuteNonQueryAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters) > 0;

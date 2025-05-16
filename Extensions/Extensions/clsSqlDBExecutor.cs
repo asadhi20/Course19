@@ -112,8 +112,8 @@ namespace HelperClasses.Extensions
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
-                connection.Open();
                 SqlCommand command = _prepareCommand(connection, query, commandType, parameters);
+                connection.Open();
                 
                 return command.ExecuteReader(behavior);
             }
@@ -129,8 +129,8 @@ namespace HelperClasses.Extensions
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
-                await connection.OpenAsync();
                 SqlCommand command = _prepareCommand(connection, query, commandType, parameters);
+                await connection.OpenAsync();
 
                 return await command.ExecuteReaderAsync(behavior);
             }

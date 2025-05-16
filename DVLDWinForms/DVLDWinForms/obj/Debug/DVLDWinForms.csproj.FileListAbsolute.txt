@@ -88,3 +88,43 @@ C:\Users\mraba\source\repos\Projects\DVLD v.0.1\DVLDWinForms\DVLDWinForms\obj\De
 C:\Users\mraba\source\repos\Projects\DVLD v.0.1\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinF.BC4B1106.Up2Date
 C:\Users\mraba\source\repos\Projects\DVLD v.0.1\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.exe
 C:\Users\mraba\source\repos\Projects\DVLD v.0.1\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.pdb
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\DVLDWinForms.exe.config
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\DVLDWinForms.exe
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\DVLDWinForms.pdb
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\DVLD_BLL.dll
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\HelperClasses.dll
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\DVLD_DAL.dll
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\DVLD_BLL.pdb
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\HelperClasses.pdb
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\DVLD_DAL.pdb
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.csproj.AssemblyReference.cache
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.Applications.DivingLicenseServices.NewDrivingLicense.frmNewLocalDrivingLicenseApplication.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.Applications.ManageApplications.frmLocalDrivingLicenseApplications.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.Applications.ManageApplications.LocalDrivingLicenseApplications.SechdlueTests.frmSechduleVisionTest.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.Applications.ManageApplications.LocalDrivingLicenseApplications.SechdlueTests.frmVisionTestAppointments.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.Applications.ManageApplicationTypes.frmManageApplicationTypes.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.Applications.ManageApplicationTypes.frmUpdateApplicationType.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.Applications.ManageTestTypes.frmManageTestTypes.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.Applications.ManageTestTypes.frmUpdateTestType.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.Applications.UserControls.ucApplicationBasicInfoCard.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.Applications.UserControls.ucLocalDLAppInfoCard.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.Applications.UserControls.ucSechdule_ResechduleTest.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.People.UserControls.ucAddEditPerson.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.People.UserControls.ucPersonCard.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.People.UserControls.ucPersonInfoCardWithFilter.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.Users.frmAddEditUser.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.Users.frmChangePassword.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.frmLogin.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.People.frmAddEditPerson.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.People.frmManagePeople.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.Users.frmMain.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.People.frmPersonDetails.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.Properties.Resources.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.Users.frmManageUsers.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.Users.frmUserDetails.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.Users.UserControles.ucUserCard.resources
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.csproj.GenerateResource.cache
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.csproj.CoreCompileInputs.cache
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinF.BC4B1106.Up2Date
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.exe
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.pdb

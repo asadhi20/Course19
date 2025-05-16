@@ -8,10 +8,18 @@ using System.Threading;
 
 namespace DVLD_DAL.People
 {
-    public sealed class clsPersonData
+    public static class clsPersonData
     {
         #region Internal Const Fields
-        internal const int Female_GenderValue = 1;
+        internal const int _NationalNoColumnSize = 20;
+        internal const int _FirstNameColumnSize = 20;
+        internal const int _SecondNameColumnSize = 20;
+        internal const int _ThirdNameColumnSize = 20;
+        internal const int _LastNameCloumnSize = 20;
+        internal const int _AddressColumnSize = 500;
+        internal const int _PhoneColumnSize = 20;
+        internal const int _EmailColumnSize = 50;
+        internal const int _ImagePathColumnSize = 150;
         #endregion
 
         #region Sync Methods
@@ -29,18 +37,18 @@ namespace DVLD_DAL.People
                                    SELECT SCOPE_IDENTITY();";
 
             SqlParameter[] parameters = new SqlParameter[] {
-                    new SqlParameter("@NationalNo", SqlDbType.NVarChar, 20) { Value = NationalNo },
-                    new SqlParameter("@FirstName", SqlDbType.NVarChar, 20) { Value = FirstName },
-                    new SqlParameter("@SecondName", SqlDbType.NVarChar, 20) { Value = SecondName },
-                    new SqlParameter("@ThirdName", SqlDbType.NVarChar, 20) { Value = string.IsNullOrWhiteSpace(ThirdName) ? DBNull.Value : (object)ThirdName },
-                    new SqlParameter("@LastName", SqlDbType.NVarChar, 20) { Value = LastName },
-                    new SqlParameter("@DateOfBirth", SqlDbType.DateTime) { Value = DateOfBirth },
-                    new SqlParameter("@Gender", SqlDbType.TinyInt) { Value = Gender },
-                    new SqlParameter("@Address", SqlDbType.NVarChar, 500) { Value = Address },
-                    new SqlParameter("@Phone", SqlDbType.NVarChar, 20) { Value = Phone },
-                    new SqlParameter("@Email", SqlDbType.NVarChar, 50) { Value = string.IsNullOrWhiteSpace(Email) ? DBNull.Value : (object)Email },
-                    new SqlParameter("@NationalityCountryID", SqlDbType.Int) { Value = NationalityCountryID },
-                    new SqlParameter("@ImagePath", SqlDbType.NVarChar, 250) { Value = string.IsNullOrWhiteSpace(ImagePath) ? DBNull.Value : (object)ImagePath },
+                new SqlParameter("@NationalNo", SqlDbType.NVarChar, _NationalNoColumnSize) { Value = NationalNo },
+                new SqlParameter("@FirstName", SqlDbType.NVarChar, _FirstNameColumnSize) { Value = FirstName },
+                new SqlParameter("@SecondName", SqlDbType.NVarChar, _SecondNameColumnSize) { Value = SecondName },
+                new SqlParameter("@ThirdName", SqlDbType.NVarChar, _ThirdNameColumnSize) { Value = string.IsNullOrWhiteSpace(ThirdName) ? DBNull.Value : (object)ThirdName },
+                new SqlParameter("@LastName", SqlDbType.NVarChar, _LastNameCloumnSize) { Value = LastName },
+                new SqlParameter("@DateOfBirth", SqlDbType.DateTime) { Value = DateOfBirth },
+                new SqlParameter("@Gender", SqlDbType.TinyInt) { Value = Gender },
+                new SqlParameter("@Address", SqlDbType.NVarChar, _AddressColumnSize) { Value = Address },
+                new SqlParameter("@Phone", SqlDbType.NVarChar, _PhoneColumnSize) { Value = Phone },
+                new SqlParameter("@Email", SqlDbType.NVarChar, _EmailColumnSize) { Value = string.IsNullOrWhiteSpace(Email) ? DBNull.Value : (object)Email },
+                new SqlParameter("@NationalityCountryID", SqlDbType.Int) { Value = NationalityCountryID },
+                new SqlParameter("@ImagePath", SqlDbType.NVarChar, _ImagePathColumnSize) { Value = string.IsNullOrWhiteSpace(ImagePath) ? DBNull.Value : (object)ImagePath },
                 };
 
             object result = clsSqlDBExecutor.ExecuteScalar(clsDBSettings.CnnString("DVLD_DB"), query, parameters);
@@ -61,18 +69,20 @@ namespace DVLD_DAL.People
             {
                 if (reader != null && reader.Read())
                 {
-                    NationalNo = reader["NationalNo"].ToString();
-                    FirstName = reader["FirstName"].ToString();
-                    SecondName = reader["SecondName"].ToString();
-                    ThirdName = reader["ThirdName"] != DBNull.Value ? reader["ThirdName"].ToString() : string.Empty;
-                    LastName = reader["LastName"].ToString();
-                    DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]);
-                    Gender = Convert.ToBoolean(reader["Gender"]);
-                    Address = reader["Address"].ToString();
-                    Phone = reader["Phone"].ToString();
-                    Email = reader["Email"] != DBNull.Value ? reader["Email"].ToString() : string.Empty;
-                    NationalityCountryID = Convert.ToInt32(reader["NationalityCountryID"]);
-                    ImagePath = reader["ImagePath"] != DBNull.Value ? reader["ImagePath"].ToString() : string.Empty;
+                    int indThirdName = reader.GetOrdinal("ThirdName"), indEmail = reader.GetOrdinal("Email"), indImagePath = reader.GetOrdinal("ImagePath");
+
+                    NationalNo = reader.GetString(reader.GetOrdinal("NationalNo"));
+                    FirstName = reader.GetString(reader.GetOrdinal("FirstName"));
+                    SecondName = reader.GetString(reader.GetOrdinal("SecondName"));
+                    ThirdName = reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName);
+                    LastName = reader.GetString(reader.GetOrdinal("LastName"));
+                    DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth"));
+                    Gender = reader.GetBoolean(reader.GetOrdinal("Gender"));
+                    Address = reader.GetString(reader.GetOrdinal("Address"));
+                    Phone = reader.GetString(reader.GetOrdinal("Phone"));
+                    Email = reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail);
+                    NationalityCountryID = reader.GetInt32(reader.GetOrdinal("NationalityCountryID"));
+                    ImagePath = reader.IsDBNull(indImagePath) ? string.Empty : reader.GetString(indImagePath);
                     return true;
                 }
             };
@@ -86,23 +96,25 @@ namespace DVLD_DAL.People
         {
             const string query = "SELECT PersonID, FirstName, SecondName, ThirdName, LastName, DateOfBirth, Gender, Address, Phone, Email, NationalityCountryID, ImagePath FROM People WHERE NationalNo = @NationalNo;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@NationalNo", SqlDbType.NVarChar, 20) { Value = NationalNo } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@NationalNo", SqlDbType.NVarChar, _NationalNoColumnSize) { Value = NationalNo } };
             using (SqlDataReader reader = clsSqlDBExecutor.ExecuteReader(clsDBSettings.CnnString("DVLD_DB"), query, parameters))
             {
                 if (reader != null && reader.Read())
                 {
-                    ID = Convert.ToInt32(reader["PersonID"]);
-                    FirstName = reader["FirstName"].ToString();
-                    SecondName = reader["SecondName"].ToString();
-                    ThirdName = reader["ThirdName"]?.ToString() ?? string.Empty;
-                    LastName = reader["LastName"].ToString();
-                    DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]);
-                    Gender = Convert.ToBoolean(reader["Gender"]);
-                    Address = reader["Address"].ToString();
-                    Phone = reader["Phone"].ToString();
-                    Email = reader["Email"]?.ToString() ?? string.Empty;
-                    NationalityCountryID = Convert.ToInt32(reader["NationalityCountryID"]);
-                    ImagePath = reader["ImagePath"]?.ToString() ?? string.Empty;
+                    int indThirdName = reader.GetOrdinal("ThirdName"), indEmail = reader.GetOrdinal("Email"), indImagePath = reader.GetOrdinal("ImagePath");
+
+                    ID = reader.GetInt32(reader.GetOrdinal("PersonID"));
+                    FirstName = reader.GetString(reader.GetOrdinal("FirstName"));
+                    SecondName = reader.GetString(reader.GetOrdinal("SecondName"));
+                    ThirdName = reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName);
+                    LastName = reader.GetString(reader.GetOrdinal("LastName"));
+                    DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth"));
+                    Gender = reader.GetBoolean(reader.GetOrdinal("Gender"));
+                    Address = reader.GetString(reader.GetOrdinal("Address"));
+                    Phone = reader.GetString(reader.GetOrdinal("Phone"));
+                    Email = reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail);
+                    NationalityCountryID = reader.GetInt32(reader.GetOrdinal("NationalityCountryID"));
+                    ImagePath = reader.IsDBNull(indImagePath) ? string.Empty : reader.GetString(indImagePath);
                     return true;
                 }
             };
@@ -116,23 +128,25 @@ namespace DVLD_DAL.People
         {
             const string query = "SELECT PersonID, NationalNo, SecondName, ThirdName, LastName, DateOfBirth, Gender, Address, Phone, Email, NationalityCountryID, ImagePath FROM People WHERE FirstName = @FirstName;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@FirstName", SqlDbType.NVarChar, 20) { Value = FirstName } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@FirstName", SqlDbType.NVarChar, _FirstNameColumnSize) { Value = FirstName } };
             using (SqlDataReader reader = clsSqlDBExecutor.ExecuteReader(clsDBSettings.CnnString("DVLD_DB"), query, parameters))
             {
                 if (reader != null && reader.Read())
                 {
-                    ID = Convert.ToInt32(reader["PersonID"]);
-                    NationalNo = reader["NationalNo"].ToString();
-                    SecondName = reader["SecondName"].ToString();
-                    ThirdName = reader["ThirdName"]?.ToString() ?? string.Empty;
-                    LastName = reader["LastName"].ToString();
-                    DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]);
-                    Gender = Convert.ToBoolean(reader["Gender"]);
-                    Address = reader["Address"].ToString();
-                    Phone = reader["Phone"].ToString();
-                    Email = reader["Email"]?.ToString() ?? string.Empty;
-                    NationalityCountryID = Convert.ToInt32(reader["NationalityCountryID"]);
-                    ImagePath = reader["ImagePath"]?.ToString() ?? string.Empty;
+                    int indThirdName = reader.GetOrdinal("ThirdName"), indEmail = reader.GetOrdinal("Email"), indImagePath = reader.GetOrdinal("ImagePath");
+
+                    ID = reader.GetInt32(reader.GetOrdinal("PersonID"));
+                    NationalNo = reader.GetString(reader.GetOrdinal("NationalNo"));
+                    SecondName = reader.GetString(reader.GetOrdinal("SecondName"));
+                    ThirdName = reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName);
+                    LastName = reader.GetString(reader.GetOrdinal("LastName"));
+                    DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth"));
+                    Gender = reader.GetBoolean(reader.GetOrdinal("Gender"));
+                    Address = reader.GetString(reader.GetOrdinal("Address"));
+                    Phone = reader.GetString(reader.GetOrdinal("Phone"));
+                    Email = reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail);
+                    NationalityCountryID = reader.GetInt32(reader.GetOrdinal("NationalityCountryID"));
+                    ImagePath = reader.IsDBNull(indImagePath) ? string.Empty : reader.GetString(indImagePath);
                     return true;
                 }
             };
@@ -146,23 +160,25 @@ namespace DVLD_DAL.People
         {
             const string query = "SELECT PersonID, NationalNo, FirstName, ThirdName, LastName, DateOfBirth, Gender, Address, Phone, Email, NationalityCountryID, ImagePath FROM People WHERE SecondName = @SecondName;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@SecondName", SqlDbType.NVarChar, 20) { Value = SecondName } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@SecondName", SqlDbType.NVarChar, _SecondNameColumnSize) { Value = SecondName } };
             using (SqlDataReader reader = clsSqlDBExecutor.ExecuteReader(clsDBSettings.CnnString("DVLD_DB"), query, parameters))
             {
                 if (reader != null && reader.Read())
                 {
-                    ID = Convert.ToInt32(reader["PersonID"]);
-                    NationalNo = reader["NationalNo"].ToString();
-                    FirstName = reader["FirstName"].ToString();
-                    ThirdName = reader["ThirdName"]?.ToString() ?? string.Empty;
-                    LastName = reader["LastName"].ToString();
-                    DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]);
-                    Gender = Convert.ToBoolean(reader["Gender"]);
-                    Address = reader["Address"].ToString();
-                    Phone = reader["Phone"].ToString();
-                    Email = reader["Email"]?.ToString() ?? string.Empty;
-                    NationalityCountryID = Convert.ToInt32(reader["NationalityCountryID"]);
-                    ImagePath = reader["ImagePath"]?.ToString() ?? string.Empty;
+                    int indThirdName = reader.GetOrdinal("ThirdName"), indEmail = reader.GetOrdinal("Email"), indImagePath = reader.GetOrdinal("ImagePath");
+
+                    ID = reader.GetInt32(reader.GetOrdinal("PersonID"));
+                    NationalNo = reader.GetString(reader.GetOrdinal("NationalNo"));
+                    FirstName = reader.GetString(reader.GetOrdinal("FirstName"));
+                    ThirdName = reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName);
+                    LastName = reader.GetString(reader.GetOrdinal("LastName"));
+                    DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth"));
+                    Gender = reader.GetBoolean(reader.GetOrdinal("Gender"));
+                    Address = reader.GetString(reader.GetOrdinal("Address"));
+                    Phone = reader.GetString(reader.GetOrdinal("Phone"));
+                    Email = reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail);
+                    NationalityCountryID = reader.GetInt32(reader.GetOrdinal("NationalityCountryID"));
+                    ImagePath = reader.IsDBNull(indImagePath) ? string.Empty : reader.GetString(indImagePath);
                     return true;
                 }
             };
@@ -176,23 +192,25 @@ namespace DVLD_DAL.People
         {
             const string query = "SELECT PersonID, NationalNo, FirstName, SecondName, LastName, DateOfBirth, Gender, Address, Phone, Email, NationalityCountryID, ImagePath FROM People WHERE ThirdName = @ThirdName;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@ThirdName", SqlDbType.NVarChar, 20) { Value = ThirdName } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@ThirdName", SqlDbType.NVarChar, _ThirdNameColumnSize) { Value = ThirdName } };
             using (SqlDataReader reader = clsSqlDBExecutor.ExecuteReader(clsDBSettings.CnnString("DVLD_DB"), query, parameters))
             {
                 if (reader != null && reader.Read())
                 {
-                    ID = Convert.ToInt32(reader["PersonID"]);
-                    NationalNo = reader["NationalNo"]?.ToString() ?? string.Empty;
-                    FirstName = reader["FirstName"].ToString();
-                    SecondName = reader["SecondName"].ToString();
-                    LastName = reader["LastName"].ToString();
-                    DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]);
-                    Gender = Convert.ToBoolean(reader["Gender"]);
-                    Address = reader["Address"].ToString();
-                    Phone = reader["Phone"].ToString();
-                    Email = reader["Email"]?.ToString() ?? string.Empty;
-                    NationalityCountryID = Convert.ToInt32(reader["NationalityCountryID"]);
-                    ImagePath = reader["ImagePath"]?.ToString() ?? string.Empty;
+                    int indEmail = reader.GetOrdinal("Email"), indImagePath = reader.GetOrdinal("ImagePath");
+
+                    ID = reader.GetInt32(reader.GetOrdinal("PersonID"));
+                    NationalNo = reader.GetString(reader.GetOrdinal("NationalNo"));
+                    FirstName = reader.GetString(reader.GetOrdinal("FirstName"));
+                    SecondName = reader.GetString(reader.GetOrdinal("SecondName"));
+                    LastName = reader.GetString(reader.GetOrdinal("LastName"));
+                    DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth"));
+                    Gender = reader.GetBoolean(reader.GetOrdinal("Gender"));
+                    Address = reader.GetString(reader.GetOrdinal("Address"));
+                    Phone = reader.GetString(reader.GetOrdinal("Phone"));
+                    Email = reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail);
+                    NationalityCountryID = reader.GetInt32(reader.GetOrdinal("NationalityCountryID"));
+                    ImagePath = reader.IsDBNull(indImagePath) ? string.Empty : reader.GetString(indImagePath);
                     return true;
                 }
             };
@@ -206,23 +224,26 @@ namespace DVLD_DAL.People
         {
             const string query = "SELECT PersonID, NationalNo, FirstName, SecondName, ThirdName, DateOfBirth, Gender, Address, Phone, Email, NationalityCountryID, ImagePath FROM People WHERE LastName = @LastName;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@LastName", SqlDbType.NVarChar, 20) { Value = LastName } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@LastName", SqlDbType.NVarChar, _LastNameCloumnSize) { Value = LastName } };
             using (SqlDataReader reader = clsSqlDBExecutor.ExecuteReader(clsDBSettings.CnnString("DVLD_DB"), query, parameters))
             {
                 if (reader != null && reader.Read())
                 {
-                    ID = Convert.ToInt32(reader["PersonID"]);
-                    NationalNo = reader["NationalNo"].ToString();
-                    FirstName = reader["FirstName"].ToString();
-                    SecondName = reader["SecondName"].ToString();
-                    ThirdName = reader["ThirdName"]?.ToString() ?? string.Empty;
-                    DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]);
-                    Gender = Convert.ToBoolean(reader["Gender"]);
-                    Address = reader["Address"].ToString();
-                    Phone = reader["Phone"].ToString();
-                    Email = reader["Email"]?.ToString() ?? string.Empty;
-                    NationalityCountryID = Convert.ToInt32(reader["NationalityCountryID"]);
-                    ImagePath = reader["ImagePath"]?.ToString() ?? string.Empty;
+                    int indThirdName = reader.GetOrdinal("ThirdName"), indEmail = reader.GetOrdinal("Email"), indImagePath = reader.GetOrdinal("ImagePath");
+
+                    ID = reader.GetInt32(reader.GetOrdinal("PersonID"));
+                    NationalNo = reader.GetString(reader.GetOrdinal("NationalNo"));
+                    FirstName = reader.GetString(reader.GetOrdinal("FirstName"));
+                    SecondName = reader.GetString(reader.GetOrdinal("SecondName"));
+                    ThirdName = reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName);
+                    DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth"));
+                    Gender = reader.GetBoolean(reader.GetOrdinal("Gender"));
+                    Address = reader.GetString(reader.GetOrdinal("Address"));
+                    Phone = reader.GetString(reader.GetOrdinal("Phone"));
+                    Email = reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail);
+                    NationalityCountryID = reader.GetInt32(reader.GetOrdinal("NationalityCountryID"));
+                    ImagePath = reader.IsDBNull(indImagePath) ? string.Empty : reader.GetString(indImagePath);
+
                     return true;
                 }
             };
@@ -236,23 +257,26 @@ namespace DVLD_DAL.People
         {
             const string query = "SELECT PersonID, NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth, Gender, Address, Email, NationalityCountryID, ImagePath FROM People WHERE Phone = @Phone;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@Phone", SqlDbType.NVarChar, 20) { Value = Phone } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@Phone", SqlDbType.NVarChar, _PhoneColumnSize) { Value = Phone } };
             using (SqlDataReader reader = clsSqlDBExecutor.ExecuteReader(clsDBSettings.CnnString("DVLD_DB"), query, parameters))
             {
                 if (reader != null && reader.Read())
                 {
-                    ID = Convert.ToInt32(reader["PersonID"]);
-                    NationalNo = reader["NationalNo"].ToString();
-                    FirstName = reader["FirstName"].ToString();
-                    SecondName = reader["SecondName"].ToString();
-                    ThirdName = reader["ThirdName"]?.ToString() ?? string.Empty;
-                    LastName = reader["LastName"].ToString();
-                    DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]);
-                    Gender = Convert.ToBoolean(reader["Gender"]);
-                    Address = reader["Address"].ToString();
-                    Email = reader["Email"]?.ToString() ?? string.Empty;
-                    NationalityCountryID = Convert.ToInt32(reader["NationalityCountryID"]);
-                    ImagePath = reader["ImagePath"]?.ToString() ?? string.Empty;
+                    int indThirdName = reader.GetOrdinal("ThirdName"), indEmail = reader.GetOrdinal("Email"), indImagePath = reader.GetOrdinal("ImagePath");
+
+                    ID = reader.GetInt32(reader.GetOrdinal("PersonID"));
+                    NationalNo = reader.GetString(reader.GetOrdinal("NationalNo"));
+                    FirstName = reader.GetString(reader.GetOrdinal("FirstName"));
+                    SecondName = reader.GetString(reader.GetOrdinal("SecondName"));
+                    ThirdName = reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName);
+                    LastName = reader.GetString(reader.GetOrdinal("LastName"));
+                    DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth"));
+                    Gender = reader.GetBoolean(reader.GetOrdinal("Gender"));
+                    Address = reader.GetString(reader.GetOrdinal("Address"));
+                    Email = reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail);
+                    NationalityCountryID = reader.GetInt32(reader.GetOrdinal("NationalityCountryID"));
+                    ImagePath = reader.IsDBNull(indImagePath) ? string.Empty : reader.GetString(indImagePath);
+
                     return true;
                 }
             };
@@ -269,23 +293,26 @@ namespace DVLD_DAL.People
                                        Address, Phone, NationalityCountryID, ImagePath FROM People WHERE Email = @Email;
                                    END;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@Email", SqlDbType.NVarChar, 50) { Value = Email.IsNullOrEmptyOrWhiteSpace() ? DBNull.Value : (object)Email.RemoveWhiteSpaces() } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@Email", SqlDbType.NVarChar, _EmailColumnSize) { Value = Email.IsNullOrEmptyOrWhiteSpace() ? DBNull.Value : (object)Email.RemoveWhiteSpaces() } };
             using (SqlDataReader reader = clsSqlDBExecutor.ExecuteReader(clsDBSettings.CnnString("DVLD_DB"), query, parameters))
             {
                 if (reader != null && reader.Read())
                 {
-                    ID = Convert.ToInt32(reader["PersonID"]);
-                    NationalNo = reader["NationalNo"].ToString();
-                    FirstName = reader["FirstName"].ToString();
-                    SecondName = reader["SecondName"].ToString();
-                    ThirdName = reader["ThirdName"]?.ToString() ?? string.Empty;
-                    LastName = reader["LastName"].ToString();
-                    DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]);
-                    Gender = Convert.ToBoolean(reader["Gender"]);
-                    Address = reader["Address"].ToString();
-                    Phone = reader["Phone"].ToString();
-                    NationalityCountryID = Convert.ToInt32(reader["NationalityCountryID"]);
-                    ImagePath = reader["ImagePath"]?.ToString() ?? string.Empty;
+                    int indThirdName = reader.GetOrdinal("ThirdName"), indImagePath = reader.GetOrdinal("ImagePath");
+
+                    ID = reader.GetInt32(reader.GetOrdinal("PersonID"));
+                    NationalNo = reader.GetString(reader.GetOrdinal("NationalNo"));
+                    FirstName = reader.GetString(reader.GetOrdinal("FirstName"));
+                    SecondName = reader.GetString(reader.GetOrdinal("SecondName"));
+                    ThirdName = reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName);
+                    LastName = reader.GetString(reader.GetOrdinal("LastName"));
+                    DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth"));
+                    Gender = reader.GetBoolean(reader.GetOrdinal("Gender"));
+                    Address = reader.GetString(reader.GetOrdinal("Address"));
+                    Phone = reader.GetString(reader.GetOrdinal("Phone"));
+                    NationalityCountryID = reader.GetInt32(reader.GetOrdinal("NationalityCountryID"));
+                    ImagePath = reader.IsDBNull(indImagePath) ? string.Empty : reader.GetString(indImagePath);
+
                     return true;
                 }
             };
@@ -306,8 +333,8 @@ namespace DVLD_DAL.People
 
         public static DataTable GetPeople()
         {
-            const string query = @"SELECT PersonID, NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth, 
-                                      CASE Gender WHEN 0 THEN 'Male' ELSE 'Female' END AS Gender, Nationality, Phone, Email 
+            const string query = @"SELECT [Person ID], [National No], [First Name], [Second Name], [Third Name], [Last Name], 
+                                          [Date Of Birth], Nationality, Gender, Phone, Email
                                    FROM People_View;";
 
             DataTable people = new DataTable();
@@ -333,7 +360,7 @@ namespace DVLD_DAL.People
         {
             const string query = "SELECT 1 FROM People WHERE NationalNo = @NationalNo;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@NationalNo", SqlDbType.NVarChar, 20) { Value = NationalNo } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@NationalNo", SqlDbType.NVarChar, _NationalNoColumnSize) { Value = NationalNo } };
 
             return clsSqlDBExecutor.ExecuteScalar(clsDBSettings.CnnString("DVLD_DB"), query, parameters) != null;
         }
@@ -343,10 +370,10 @@ namespace DVLD_DAL.People
             const string query = "SELECT 1 FROM People WHERE FirstName = @FirstName AND SecondName = @SecondName AND ThirdName = @ThirdName AND LastName = @LastName;";
 
             SqlParameter[] parameters = new SqlParameter[] {
-                new SqlParameter("@FirstName" , SqlDbType.NVarChar, 20) { Value = FirstName },
-                new SqlParameter("@SecondName", SqlDbType.NVarChar, 20) { Value = SecondName },
-                new SqlParameter("@ThirdName" , SqlDbType.NVarChar, 20) { Value = ThirdName.IsNullOrEmptyOrWhiteSpace() ? DBNull.Value : (object)ThirdName },
-                new SqlParameter("@LastName"  , SqlDbType.NVarChar, 20) { Value = LastName }
+                new SqlParameter("@FirstName" , SqlDbType.NVarChar, _FirstNameColumnSize) { Value = FirstName },
+                new SqlParameter("@SecondName", SqlDbType.NVarChar, _SecondNameColumnSize) { Value = SecondName },
+                new SqlParameter("@ThirdName" , SqlDbType.NVarChar, _ThirdNameColumnSize) { Value = ThirdName.IsNullOrEmptyOrWhiteSpace() ? DBNull.Value : (object)ThirdName },
+                new SqlParameter("@LastName"  , SqlDbType.NVarChar, _LastNameCloumnSize) { Value = LastName }
             };
 
             return clsSqlDBExecutor.ExecuteScalar(clsDBSettings.CnnString("DVLD_DB"), query, parameters) != null;
@@ -415,19 +442,19 @@ namespace DVLD_DAL.People
                                    WHERE PersonID = @PersonID;";
 
             SqlParameter[] parameters = new SqlParameter[] {
-                    new SqlParameter("@PersonID", SqlDbType.Int) { Value = ID },
-                    new SqlParameter("@NationalNo", SqlDbType.VarChar, 20) { Value = NationalNo },
-                    new SqlParameter("@FirstName", SqlDbType.VarChar, 20) { Value = FirstName },
-                    new SqlParameter("@SecondName", SqlDbType.VarChar, 20) { Value = SecondName },
-                    new SqlParameter("@ThirdName", SqlDbType.VarChar, 20) { Value = ThirdName.IsNullOrEmptyOrWhiteSpace() ? DBNull.Value : (object)ThirdName },
-                    new SqlParameter("@LastName", SqlDbType.VarChar, 20) { Value = LastName },
-                    new SqlParameter("@DateOfBirth", SqlDbType.DateTime) { Value = DateOfBirth },
-                    new SqlParameter("@Gender", SqlDbType.TinyInt) { Value = Gender },
-                    new SqlParameter("@Address", SqlDbType.VarChar, 500) { Value = Address },
-                    new SqlParameter("@Phone", SqlDbType.VarChar, 20) { Value = Phone },
-                    new SqlParameter("@Email", SqlDbType.VarChar, 50) { Value = Email.IsNullOrEmptyOrWhiteSpace() ? DBNull.Value : (object)Email },
-                    new SqlParameter("@NationalityCountryID", SqlDbType.Int) { Value = NationalityCountryID },
-                    new SqlParameter("@ImagePath", SqlDbType.VarChar, 250) { Value = ImagePath.IsNullOrEmptyOrWhiteSpace() ? DBNull.Value : (object)ImagePath },
+                new SqlParameter("@PersonID", SqlDbType.Int) { Value = ID },
+                new SqlParameter("@NationalNo", SqlDbType.NVarChar, _NationalNoColumnSize) { Value = NationalNo },
+                new SqlParameter("@FirstName", SqlDbType.NVarChar, _FirstNameColumnSize) { Value = FirstName },
+                new SqlParameter("@SecondName", SqlDbType.NVarChar, _SecondNameColumnSize) { Value = SecondName },
+                new SqlParameter("@ThirdName", SqlDbType.NVarChar, _ThirdNameColumnSize) { Value = string.IsNullOrWhiteSpace(ThirdName) ? DBNull.Value : (object)ThirdName },
+                new SqlParameter("@LastName", SqlDbType.NVarChar, _LastNameCloumnSize) { Value = LastName },
+                new SqlParameter("@DateOfBirth", SqlDbType.DateTime) { Value = DateOfBirth },
+                new SqlParameter("@Gender", SqlDbType.TinyInt) { Value = Gender },
+                new SqlParameter("@Address", SqlDbType.NVarChar, _AddressColumnSize) { Value = Address },
+                new SqlParameter("@Phone", SqlDbType.NVarChar, _PhoneColumnSize) { Value = Phone },
+                new SqlParameter("@Email", SqlDbType.NVarChar, _EmailColumnSize) { Value = string.IsNullOrWhiteSpace(Email) ? DBNull.Value : (object)Email },
+                new SqlParameter("@NationalityCountryID", SqlDbType.Int) { Value = NationalityCountryID },
+                new SqlParameter("@ImagePath", SqlDbType.NVarChar, _ImagePathColumnSize) { Value = string.IsNullOrWhiteSpace(ImagePath) ? DBNull.Value : (object)ImagePath },
                 };
 
             return clsSqlDBExecutor.ExecuteNonQuery(clsDBSettings.CnnString("DVLD_DB"), query, parameters) > 0;
@@ -452,18 +479,18 @@ namespace DVLD_DAL.People
                                    WHERE NationalNo = @NationalNo;";
 
             SqlParameter[] parameters = new SqlParameter[] {
-                    new SqlParameter("@NationalNo", SqlDbType.VarChar, 20) { Value = NationalNo },
-                    new SqlParameter("@FirstName", SqlDbType.VarChar, 20) { Value = FirstName },
-                    new SqlParameter("@SecondName", SqlDbType.VarChar, 20) { Value = SecondName },
-                    new SqlParameter("@ThirdName", SqlDbType.VarChar, 20) { Value = string.IsNullOrWhiteSpace(ThirdName) ? DBNull.Value : (object)ThirdName },
-                    new SqlParameter("@LastName", SqlDbType.VarChar, 20) { Value = LastName },
-                    new SqlParameter("@DateOfBirth", SqlDbType.DateTime) { Value = DateOfBirth },
-                    new SqlParameter("@Gender", SqlDbType.TinyInt) { Value = Gender },
-                    new SqlParameter("@Address", SqlDbType.VarChar, 500) { Value = Address },
-                    new SqlParameter("@Phone", SqlDbType.VarChar, 20) { Value = Phone },
-                    new SqlParameter("@Email", SqlDbType.VarChar, 50) { Value = string.IsNullOrWhiteSpace(Email) ? DBNull.Value : (object)Email },
-                    new SqlParameter("@NationalityCountryID", SqlDbType.Int) { Value = NationalityCountryID },
-                    new SqlParameter("@ImagePath", SqlDbType.VarChar, 250) { Value = string.IsNullOrWhiteSpace(ImagePath) ? DBNull.Value : (object)ImagePath },
+                new SqlParameter("@NationalNo", SqlDbType.NVarChar, _NationalNoColumnSize) { Value = NationalNo },
+                new SqlParameter("@FirstName", SqlDbType.NVarChar, _FirstNameColumnSize) { Value = FirstName },
+                new SqlParameter("@SecondName", SqlDbType.NVarChar, _SecondNameColumnSize) { Value = SecondName },
+                new SqlParameter("@ThirdName", SqlDbType.NVarChar, _ThirdNameColumnSize) { Value = string.IsNullOrWhiteSpace(ThirdName) ? DBNull.Value : (object)ThirdName },
+                new SqlParameter("@LastName", SqlDbType.NVarChar, _LastNameCloumnSize) { Value = LastName },
+                new SqlParameter("@DateOfBirth", SqlDbType.DateTime) { Value = DateOfBirth },
+                new SqlParameter("@Gender", SqlDbType.TinyInt) { Value = Gender },
+                new SqlParameter("@Address", SqlDbType.NVarChar, _AddressColumnSize) { Value = Address },
+                new SqlParameter("@Phone", SqlDbType.NVarChar, _PhoneColumnSize) { Value = Phone },
+                new SqlParameter("@Email", SqlDbType.NVarChar, _EmailColumnSize) { Value = string.IsNullOrWhiteSpace(Email) ? DBNull.Value : (object)Email },
+                new SqlParameter("@NationalityCountryID", SqlDbType.Int) { Value = NationalityCountryID },
+                new SqlParameter("@ImagePath", SqlDbType.NVarChar, _ImagePathColumnSize) { Value = string.IsNullOrWhiteSpace(ImagePath) ? DBNull.Value : (object)ImagePath },
                 };
 
             return clsSqlDBExecutor.ExecuteNonQuery(clsDBSettings.CnnString("DVLD_DB"), query, parameters) > 0;
@@ -495,10 +522,10 @@ namespace DVLD_DAL.People
             const string query = "DELETE FROM People WHERE FirstName = @FirstName AND SecondName = @SecondName AND ThirdName = @ThirdName AND LastName = @LastName;";
 
             SqlParameter[] parameters = new SqlParameter[] {
-                new SqlParameter("@FirstName" , SqlDbType.NVarChar, 20) { Value = FirstName },
-                new SqlParameter("@SecondName", SqlDbType.NVarChar, 20) { Value = SecondName },
-                new SqlParameter("@ThirdName" , SqlDbType.NVarChar, 20) { Value = ThirdName.IsNullOrEmptyOrWhiteSpace() ? DBNull.Value : (object)ThirdName },
-                new SqlParameter("@LastName"  , SqlDbType.NVarChar, 20) { Value = LastName }
+                new SqlParameter("@FirstName" , SqlDbType.NVarChar, _FirstNameColumnSize) { Value = FirstName },
+                new SqlParameter("@SecondName", SqlDbType.NVarChar, _SecondNameColumnSize) { Value = SecondName },
+                new SqlParameter("@ThirdName" , SqlDbType.NVarChar, _ThirdNameColumnSize) { Value = ThirdName.IsNullOrEmptyOrWhiteSpace() ? DBNull.Value : (object)ThirdName },
+                new SqlParameter("@LastName"  , SqlDbType.NVarChar, _LastNameCloumnSize) { Value = LastName }
             };
 
             return clsSqlDBExecutor.ExecuteScalar(clsDBSettings.CnnString("DVLD_DB"), query, parameters) != null;
@@ -522,18 +549,18 @@ namespace DVLD_DAL.People
                                    SELECT SCOPE_IDENTITY();";
 
             SqlParameter[] parameters = new SqlParameter[] {
-                    new SqlParameter("@NationalNo", SqlDbType.NVarChar, 20) { Value = NationalNo },
-                    new SqlParameter("@FirstName", SqlDbType.NVarChar, 20) { Value = FirstName },
-                    new SqlParameter("@SecondName", SqlDbType.NVarChar, 20) { Value = SecondName },
-                    new SqlParameter("@ThirdName", SqlDbType.NVarChar, 20) { Value = string.IsNullOrWhiteSpace(ThirdName) ? DBNull.Value : (object)ThirdName },
-                    new SqlParameter("@LastName", SqlDbType.NVarChar, 20) { Value = LastName },
+                    new SqlParameter("@NationalNo", SqlDbType.NVarChar, _NationalNoColumnSize) { Value = NationalNo },
+                    new SqlParameter("@FirstName", SqlDbType.NVarChar, _FirstNameColumnSize) { Value = FirstName },
+                    new SqlParameter("@SecondName", SqlDbType.NVarChar, _SecondNameColumnSize) { Value = SecondName },
+                    new SqlParameter("@ThirdName", SqlDbType.NVarChar, _ThirdNameColumnSize) { Value = string.IsNullOrWhiteSpace(ThirdName) ? DBNull.Value : (object)ThirdName },
+                    new SqlParameter("@LastName", SqlDbType.NVarChar, _LastNameCloumnSize) { Value = LastName },
                     new SqlParameter("@DateOfBirth", SqlDbType.DateTime) { Value = DateOfBirth },
                     new SqlParameter("@Gender", SqlDbType.TinyInt) { Value = Gender },
-                    new SqlParameter("@Address", SqlDbType.NVarChar, 500) { Value = Address },
-                    new SqlParameter("@Phone", SqlDbType.NVarChar, 20) { Value = Phone },
-                    new SqlParameter("@Email", SqlDbType.NVarChar, 50) { Value = string.IsNullOrWhiteSpace(Email) ? DBNull.Value : (object)Email },
+                    new SqlParameter("@Address", SqlDbType.NVarChar, _AddressColumnSize) { Value = Address },
+                    new SqlParameter("@Phone", SqlDbType.NVarChar, _PhoneColumnSize) { Value = Phone },
+                    new SqlParameter("@Email", SqlDbType.NVarChar, _EmailColumnSize) { Value = string.IsNullOrWhiteSpace(Email) ? DBNull.Value : (object)Email },
                     new SqlParameter("@NationalityCountryID", SqlDbType.Int) { Value = NationalityCountryID },
-                    new SqlParameter("@ImagePath", SqlDbType.NVarChar, 250) { Value = string.IsNullOrWhiteSpace(ImagePath) ? DBNull.Value : (object)ImagePath },
+                    new SqlParameter("@ImagePath", SqlDbType.NVarChar, _ImagePathColumnSize) { Value = string.IsNullOrWhiteSpace(ImagePath) ? DBNull.Value : (object)ImagePath },
                 };
 
             object result = await clsSqlDBExecutor.ExecuteScalarAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters);
@@ -560,7 +587,7 @@ namespace DVLD_DAL.People
                         ThirdName: reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName),
                         LastName: reader.GetString(reader.GetOrdinal("LastName")),
                         DateOfBirth: reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
-                        Gender: reader.GetByte(reader.GetOrdinal("Gender")) is clsPersonData.Female_GenderValue,
+                        Gender: reader.GetBoolean(reader.GetOrdinal("Gender")),
                         Address: reader.GetString(reader.GetOrdinal("Address")),
                         Phone: reader.GetString(reader.GetOrdinal("Phone")),
                         Email: reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail),
@@ -580,7 +607,7 @@ namespace DVLD_DAL.People
         {
             const string query = "SELECT PersonID, FirstName, SecondName, ThirdName, LastName, DateOfBirth, Gender, Address, Phone, Email, NationalityCountryID, ImagePath FROM People WHERE NationalNo = @NationalNo;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@NationalNo", SqlDbType.NVarChar, 20) { Value = NationalNo } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@NationalNo", SqlDbType.NVarChar, _NationalNoColumnSize) { Value = NationalNo } };
             using (SqlDataReader reader = await clsSqlDBExecutor.ExecuteReaderAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters))
             {
                 if (reader != null && reader.Read())
@@ -593,7 +620,7 @@ namespace DVLD_DAL.People
                         ThirdName: reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName),
                         LastName: reader.GetString(reader.GetOrdinal("LastName")),
                         DateOfBirth: reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
-                        Gender: reader.GetByte(reader.GetOrdinal("Gender")) is clsPersonData.Female_GenderValue,
+                        Gender: reader.GetBoolean(reader.GetOrdinal("Gender")),
                         Address: reader.GetString(reader.GetOrdinal("Address")),
                         Phone: reader.GetString(reader.GetOrdinal("Phone")),
                         Email: reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail),
@@ -613,7 +640,7 @@ namespace DVLD_DAL.People
         {
             const string query = "SELECT PersonID, NationalNo, SecondName, ThirdName, LastName, DateOfBirth, Gender, Address, Phone, Email, NationalityCountryID, ImagePath FROM People WHERE FirstName = @FirstName;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@FirstName", SqlDbType.NVarChar, 20) { Value = FirstName } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@FirstName", SqlDbType.NVarChar, _FirstNameColumnSize) { Value = FirstName } };
             using (SqlDataReader reader = await clsSqlDBExecutor.ExecuteReaderAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters))
             {
                 if (reader != null && reader.Read())
@@ -626,7 +653,7 @@ namespace DVLD_DAL.People
                         ThirdName: reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName),
                         LastName: reader.GetString(reader.GetOrdinal("LastName")),
                         DateOfBirth: reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
-                        Gender: reader.GetByte(reader.GetOrdinal("Gender")) is clsPersonData.Female_GenderValue,
+                        Gender: reader.GetBoolean(reader.GetOrdinal("Gender")),
                         Address: reader.GetString(reader.GetOrdinal("Address")),
                         Phone: reader.GetString(reader.GetOrdinal("Phone")),
                         Email: reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail),
@@ -645,7 +672,7 @@ namespace DVLD_DAL.People
         {
             const string query = "SELECT PersonID, NationalNo, FirstName, ThirdName, LastName, DateOfBirth, Gender, Address, Phone, Email, NationalityCountryID, ImagePath FROM People WHERE SecondName = @SecondName;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@SecondName", SqlDbType.NVarChar, 20) { Value = SecondName } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@SecondName", SqlDbType.NVarChar, _SecondNameColumnSize) { Value = SecondName } };
             using (SqlDataReader reader = await clsSqlDBExecutor.ExecuteReaderAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters))
             {
                 if (reader != null && reader.Read())
@@ -658,7 +685,7 @@ namespace DVLD_DAL.People
                         ThirdName: reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName),
                         LastName: reader.GetString(reader.GetOrdinal("LastName")),
                         DateOfBirth: reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
-                        Gender: reader.GetByte(reader.GetOrdinal("Gender")) is clsPersonData.Female_GenderValue,
+                        Gender: reader.GetBoolean(reader.GetOrdinal("Gender")),
                         Address: reader.GetString(reader.GetOrdinal("Address")),
                         Phone: reader.GetString(reader.GetOrdinal("Phone")),
                         Email: reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail),
@@ -676,7 +703,7 @@ namespace DVLD_DAL.People
         {
             const string query = "SELECT PersonID, NationalNo, FirstName, SecondName, LastName, DateOfBirth, Gender, Address, Phone, Email, NationalityCountryID, ImagePath FROM People WHERE ThirdName = @ThirdName;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@ThirdName", SqlDbType.NVarChar, 20) { Value = ThirdName } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@ThirdName", SqlDbType.NVarChar, _ThirdNameColumnSize) { Value = ThirdName } };
             using (SqlDataReader reader = await clsSqlDBExecutor.ExecuteReaderAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters))
             {
                 if (reader != null && reader.Read())
@@ -689,7 +716,7 @@ namespace DVLD_DAL.People
                         SecondName: reader.GetString(reader.GetOrdinal("SecondName")),
                         LastName: reader.GetString(reader.GetOrdinal("LastName")),
                         DateOfBirth: reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
-                        Gender: reader.GetByte(reader.GetOrdinal("Gender")) is clsPersonData.Female_GenderValue,
+                        Gender: reader.GetBoolean(reader.GetOrdinal("Gender")),
                         Address: reader.GetString(reader.GetOrdinal("Address")),
                         Phone: reader.GetString(reader.GetOrdinal("Phone")),
                         Email: reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail),
@@ -708,7 +735,7 @@ namespace DVLD_DAL.People
         {
             const string query = "SELECT PersonID, FirstName, SecondName, ThirdName, NationalNo, DateOfBirth, Gender, Address, Phone, Email, NationalityCountryID, ImagePath FROM People WHERE LastName = @LastName;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@LastName", SqlDbType.NVarChar, 20) { Value = LastName } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@LastName", SqlDbType.NVarChar, _LastNameCloumnSize) { Value = LastName } };
             using (SqlDataReader reader = await clsSqlDBExecutor.ExecuteReaderAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters))
             {
                 if (reader != null && reader.Read())
@@ -721,7 +748,7 @@ namespace DVLD_DAL.People
                         SecondName: reader.GetString(reader.GetOrdinal("SecondName")),
                         ThirdName: reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName),
                         DateOfBirth: reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
-                        Gender: reader.GetByte(reader.GetOrdinal("Gender")) is clsPersonData.Female_GenderValue,
+                        Gender: reader.GetBoolean(reader.GetOrdinal("Gender")),
                         Address: reader.GetString(reader.GetOrdinal("Address")),
                         Phone: reader.GetString(reader.GetOrdinal("Phone")),
                         Email: reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail),
@@ -740,7 +767,7 @@ namespace DVLD_DAL.People
         {
             const string query = "SELECT PersonID, NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth, Gender, Address, Email, NationalityCountryID, ImagePath FROM People WHERE Phone = @Phone;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@Phone", SqlDbType.NVarChar, 20) { Value = Phone } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@Phone", SqlDbType.NVarChar, _PhoneColumnSize) { Value = Phone } };
             using (SqlDataReader reader = await clsSqlDBExecutor.ExecuteReaderAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters))
             {
                 if (reader != null && reader.Read())
@@ -754,7 +781,7 @@ namespace DVLD_DAL.People
                         ThirdName: reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName),
                         LastName: reader.GetString(reader.GetOrdinal("LastName")),
                         DateOfBirth: reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
-                        Gender: reader.GetByte(reader.GetOrdinal("Gender")) is clsPersonData.Female_GenderValue,
+                        Gender: reader.GetBoolean(reader.GetOrdinal("Gender")),
                         Address: reader.GetString(reader.GetOrdinal("Address")),
                         Email: reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail),
                         NationalityCountryID: reader.GetInt32(reader.GetOrdinal("NationalityCountryID")),
@@ -775,7 +802,7 @@ namespace DVLD_DAL.People
                                        Address, Phone, NationalityCountryID, ImagePath FROM People WHERE Email = @Email;
                                    END;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@Email", SqlDbType.NVarChar, 50) { Value = Email } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@Email", SqlDbType.NVarChar, _EmailColumnSize) { Value = Email } };
             using (SqlDataReader reader = await clsSqlDBExecutor.ExecuteReaderAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters))
             {
                 if (reader != null && reader.Read())
@@ -789,7 +816,7 @@ namespace DVLD_DAL.People
                         ThirdName: reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName),
                         LastName: reader.GetString(reader.GetOrdinal("LastName")),
                         DateOfBirth: reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
-                        Gender: reader.GetByte(reader.GetOrdinal("Gender")) is clsPersonData.Female_GenderValue,
+                        Gender: reader.GetBoolean(reader.GetOrdinal("Gender")),
                         Address: reader.GetString(reader.GetOrdinal("Address")),
                         Phone: reader.GetString(reader.GetOrdinal("Phone")),
                         NationalityCountryID: reader.GetInt32(reader.GetOrdinal("NationalityCountryID")),
@@ -816,8 +843,8 @@ namespace DVLD_DAL.People
 
         public static async Task<DataTable> GetPeopleAsync()
         {
-            const string query = @"SELECT PersonID, NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth, 
-                                      CASE Gender WHEN 0 THEN 'Male' ELSE 'Female' END AS Gender, Nationality, Phone, Email 
+            const string query = @"SELECT [Person ID], [National No], [First Name], [Second Name], [Third Name], [Last Name], 
+                                          [Date Of Birth], Nationality, Gender, Phone, Email
                                    FROM People_View;";
 
             DataTable people = new DataTable();
@@ -860,7 +887,7 @@ namespace DVLD_DAL.People
                         ThirdName: reader.IsDBNull(indThirdName) ? string.Empty : reader.GetString(indThirdName),
                         LastName: reader.GetString(reader.GetOrdinal("LastName")),
                         DateOfBirth: reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
-                        Gender: reader.GetByte(reader.GetOrdinal("Gender")) is clsPersonData.Female_GenderValue,
+                        Gender: reader.GetBoolean(reader.GetOrdinal("Gender")),
                         Address: reader.GetString(reader.GetOrdinal("Address")),
                         Phone: reader.GetString(reader.GetOrdinal("Phone")),
                         Email: reader.IsDBNull(indEmail) ? string.Empty : reader.GetString(indEmail),
@@ -887,7 +914,7 @@ namespace DVLD_DAL.People
         {
             const string query = "SELECT 1 FROM People WHERE NationalNo = @NationalNo;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@NationalNo", SqlDbType.NVarChar, 20) { Value = NationalNo } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@NationalNo", SqlDbType.NVarChar, _NationalNoColumnSize) { Value = NationalNo } };
 
             return await clsSqlDBExecutor.ExecuteScalarAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters) != null;
         }
@@ -897,10 +924,10 @@ namespace DVLD_DAL.People
             const string query = "SELECT 1 FROM People WHERE FirstName = @FirstName AND SecondName = @SecondName AND ThirdName = @ThirdName AND LastName = @LastName;";
 
             SqlParameter[] parameters = new SqlParameter[] {
-                new SqlParameter("@FirstName" , SqlDbType.NVarChar, 20) { Value = FirstName },
-                new SqlParameter("@SecondName", SqlDbType.NVarChar, 20) { Value = SecondName },
-                new SqlParameter("@ThirdName" , SqlDbType.NVarChar, 20) { Value = ThirdName.IsNullOrEmptyOrWhiteSpace() ? DBNull.Value : (object)ThirdName },
-                new SqlParameter("@LastName"  , SqlDbType.NVarChar, 20) { Value = LastName }
+                new SqlParameter("@FirstName" , SqlDbType.NVarChar, _FirstNameColumnSize) { Value = FirstName },
+                new SqlParameter("@SecondName", SqlDbType.NVarChar, _SecondNameColumnSize) { Value = SecondName },
+                new SqlParameter("@ThirdName" , SqlDbType.NVarChar, _ThirdNameColumnSize) { Value = ThirdName.IsNullOrEmptyOrWhiteSpace() ? DBNull.Value : (object)ThirdName },
+                new SqlParameter("@LastName"  , SqlDbType.NVarChar, _LastNameCloumnSize) { Value = LastName }
             };
 
             return await clsSqlDBExecutor.ExecuteScalarAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters) != null;
@@ -910,7 +937,7 @@ namespace DVLD_DAL.People
         {
             const string query = "SELECT 1 FROM People WHERE Address = @Address;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@Address", SqlDbType.NVarChar, 500) { Value = Address } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@Address", SqlDbType.NVarChar, _AddressColumnSize) { Value = Address } };
 
             return await clsSqlDBExecutor.ExecuteScalarAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters) != null;
         }
@@ -919,7 +946,7 @@ namespace DVLD_DAL.People
         {
             const string query = "SELECT 1 FROM People WHERE Phone = @Phone;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@Phone", SqlDbType.NVarChar, 20) { Value = Phone } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@Phone", SqlDbType.NVarChar, _PhoneColumnSize) { Value = Phone } };
 
             return await clsSqlDBExecutor.ExecuteScalarAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters) != null;
         }
@@ -930,7 +957,7 @@ namespace DVLD_DAL.People
                                       SELECT 1 FROM People WHERE Email = @Email;
                                    END;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@Email", SqlDbType.NVarChar, 50) { Value = Email.IsNullOrEmptyOrWhiteSpace() ? DBNull.Value : (object)Email } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@Email", SqlDbType.NVarChar, _EmailColumnSize) { Value = Email.IsNullOrEmptyOrWhiteSpace() ? DBNull.Value : (object)Email } };
 
             return await clsSqlDBExecutor.ExecuteScalarAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters) != null;
         }
@@ -941,7 +968,7 @@ namespace DVLD_DAL.People
                                         SELECT 1 FROM People WHERE ImagePath = @ImagePath;
                                    END;";
 
-            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@ImagePath", SqlDbType.NVarChar, 250) { Value = ImagePath.IsNullOrEmptyOrWhiteSpace() ? DBNull.Value : (object)ImagePath } };
+            SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@ImagePath", SqlDbType.NVarChar, _ImagePathColumnSize) { Value = ImagePath.IsNullOrEmptyOrWhiteSpace() ? DBNull.Value : (object)ImagePath } };
 
             return await clsSqlDBExecutor.ExecuteScalarAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters) != null;
         }
@@ -970,18 +997,18 @@ namespace DVLD_DAL.People
 
             SqlParameter[] parameters = new SqlParameter[] {
                     new SqlParameter("@PersonID", SqlDbType.Int) { Value = ID },
-                    new SqlParameter("@NationalNo", SqlDbType.VarChar, 20) { Value = NationalNo },
-                    new SqlParameter("@FirstName", SqlDbType.VarChar, 20) { Value = FirstName },
-                    new SqlParameter("@SecondName", SqlDbType.VarChar, 20) { Value = SecondName },
-                    new SqlParameter("@ThirdName", SqlDbType.VarChar, 20) { Value = string.IsNullOrWhiteSpace(ThirdName) ? DBNull.Value : (object)ThirdName },
-                    new SqlParameter("@LastName", SqlDbType.VarChar, 20) { Value = LastName },
+                    new SqlParameter("@NationalNo", SqlDbType.NVarChar, _NationalNoColumnSize) { Value = NationalNo },
+                    new SqlParameter("@FirstName", SqlDbType.NVarChar, _FirstNameColumnSize) { Value = FirstName },
+                    new SqlParameter("@SecondName", SqlDbType.NVarChar, _SecondNameColumnSize) { Value = SecondName },
+                    new SqlParameter("@ThirdName", SqlDbType.NVarChar, _ThirdNameColumnSize) { Value = string.IsNullOrWhiteSpace(ThirdName) ? DBNull.Value : (object)ThirdName },
+                    new SqlParameter("@LastName", SqlDbType.NVarChar, _LastNameCloumnSize) { Value = LastName },
                     new SqlParameter("@DateOfBirth", SqlDbType.DateTime) { Value = DateOfBirth },
                     new SqlParameter("@Gender", SqlDbType.TinyInt) { Value = Gender },
-                    new SqlParameter("@Address", SqlDbType.VarChar, 500) { Value = Address },
-                    new SqlParameter("@Phone", SqlDbType.VarChar, 20) { Value = Phone },
-                    new SqlParameter("@Email", SqlDbType.VarChar, 50) { Value = string.IsNullOrWhiteSpace(Email) ? DBNull.Value : (object)Email },
+                    new SqlParameter("@Address", SqlDbType.NVarChar, _AddressColumnSize) { Value = Address },
+                    new SqlParameter("@Phone", SqlDbType.NVarChar, _PhoneColumnSize) { Value = Phone },
+                    new SqlParameter("@Email", SqlDbType.NVarChar, _EmailColumnSize) { Value = string.IsNullOrWhiteSpace(Email) ? DBNull.Value : (object)Email },
                     new SqlParameter("@NationalityCountryID", SqlDbType.Int) { Value = NationalityCountryID },
-                    new SqlParameter("@ImagePath", SqlDbType.VarChar, 250) { Value = string.IsNullOrWhiteSpace(ImagePath) ? DBNull.Value : (object)ImagePath },
+                    new SqlParameter("@ImagePath", SqlDbType.NVarChar, _ImagePathColumnSize) { Value = string.IsNullOrWhiteSpace(ImagePath) ? DBNull.Value : (object)ImagePath },
                 };
 
             return await clsSqlDBExecutor.ExecuteNonQueryAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters) > 0;
@@ -1006,18 +1033,18 @@ namespace DVLD_DAL.People
                                    WHERE NationalNo = @NationalNo;";
 
             SqlParameter[] parameters = new SqlParameter[] {
-                    new SqlParameter("@NationalNo", SqlDbType.VarChar, 20) { Value = NationalNo },
-                    new SqlParameter("@FirstName", SqlDbType.VarChar, 20) { Value = FirstName },
-                    new SqlParameter("@SecondName", SqlDbType.VarChar, 20) { Value = SecondName },
-                    new SqlParameter("@ThirdName", SqlDbType.VarChar, 20) { Value = string.IsNullOrWhiteSpace(ThirdName) ? DBNull.Value : (object)ThirdName },
-                    new SqlParameter("@LastName", SqlDbType.VarChar, 20) { Value = LastName },
+                    new SqlParameter("@NationalNo", SqlDbType.NVarChar, _NationalNoColumnSize) { Value = NationalNo },
+                    new SqlParameter("@FirstName", SqlDbType.NVarChar, _FirstNameColumnSize) { Value = FirstName },
+                    new SqlParameter("@SecondName", SqlDbType.NVarChar, _SecondNameColumnSize) { Value = SecondName },
+                    new SqlParameter("@ThirdName", SqlDbType.NVarChar, _ThirdNameColumnSize) { Value = string.IsNullOrWhiteSpace(ThirdName) ? DBNull.Value : (object)ThirdName },
+                    new SqlParameter("@LastName", SqlDbType.NVarChar, _LastNameCloumnSize) { Value = LastName },
                     new SqlParameter("@DateOfBirth", SqlDbType.DateTime) { Value = DateOfBirth },
                     new SqlParameter("@Gender", SqlDbType.TinyInt) { Value = Gender },
-                    new SqlParameter("@Address", SqlDbType.VarChar, 500) { Value = Address },
-                    new SqlParameter("@Phone", SqlDbType.VarChar, 20) { Value = Phone },
-                    new SqlParameter("@Email", SqlDbType.VarChar, 50) { Value = string.IsNullOrWhiteSpace(Email) ? DBNull.Value : (object)Email },
+                    new SqlParameter("@Address", SqlDbType.NVarChar, _AddressColumnSize) { Value = Address },
+                    new SqlParameter("@Phone", SqlDbType.NVarChar, _PhoneColumnSize) { Value = Phone },
+                    new SqlParameter("@Email", SqlDbType.NVarChar, _EmailColumnSize) { Value = string.IsNullOrWhiteSpace(Email) ? DBNull.Value : (object)Email },
                     new SqlParameter("@NationalityCountryID", SqlDbType.Int) { Value = NationalityCountryID },
-                    new SqlParameter("@ImagePath", SqlDbType.VarChar, 250) { Value = string.IsNullOrWhiteSpace(ImagePath) ? DBNull.Value : (object)ImagePath },
+                    new SqlParameter("@ImagePath", SqlDbType.NVarChar, _ImagePathColumnSize) { Value = string.IsNullOrWhiteSpace(ImagePath) ? DBNull.Value : (object)ImagePath },
                 };
 
             return await clsSqlDBExecutor.ExecuteNonQueryAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters) > 0;
@@ -1049,10 +1076,10 @@ namespace DVLD_DAL.People
             const string query = "DELETE FROM People WHERE FirstName = @FirstName AND SecondName = @SecondName AND ThirdName = @ThirdName AND LastName = @LastName;";
 
             SqlParameter[] parameters = new SqlParameter[] {
-                new SqlParameter("@FirstName" , SqlDbType.NVarChar, 20) { Value = FirstName },
-                new SqlParameter("@SecondName", SqlDbType.NVarChar, 20) { Value = SecondName },
-                new SqlParameter("@ThirdName" , SqlDbType.NVarChar, 20) { Value = ThirdName.IsNullOrEmptyOrWhiteSpace() ? DBNull.Value : (object)ThirdName },
-                new SqlParameter("@LastName"  , SqlDbType.NVarChar, 20) { Value = LastName }
+                new SqlParameter("@FirstName" , SqlDbType.NVarChar, _FirstNameColumnSize) { Value = FirstName },
+                new SqlParameter("@SecondName", SqlDbType.NVarChar, _SecondNameColumnSize) { Value = SecondName },
+                new SqlParameter("@ThirdName" , SqlDbType.NVarChar, _ThirdNameColumnSize) { Value = ThirdName.IsNullOrEmptyOrWhiteSpace() ? DBNull.Value : (object)ThirdName },
+                new SqlParameter("@LastName"  , SqlDbType.NVarChar, _LastNameCloumnSize) { Value = LastName }
             };
 
             return await clsSqlDBExecutor.ExecuteScalarAsync(clsDBSettings.CnnString("DVLD_DB"), query, parameters) != null;
