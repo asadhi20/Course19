@@ -7,7 +7,7 @@ using System.Linq;
 using System.ComponentModel;
 using System.Drawing;
 using System.Text;
-using HelperClasses.Extensions;
+using Helper.Extensions;
 using DVLD_BLL.Applications.ManageApplications.LocalDrivingLicenseApplications;
 using DVLD_BLL.Applications.DrivingLicenseServices;
 using DVLD_BLL.Applications.ManageApplicationTypes;

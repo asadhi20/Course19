@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HelperClasses.Helper_Classes
+namespace Helper.Classes
 {
     public static class WinRegistry
     {

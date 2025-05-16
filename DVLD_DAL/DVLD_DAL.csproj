@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Helper">
+      <HintPath>..\Extensions\bin\Debug\Helper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -54,12 +57,6 @@
     <Compile Include="People\clsPersonData.cs" />
     <Compile Include="Users\clsUserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Extensions\HelperClasses.csproj">
-      <Project>{a1ccfd69-da29-4ca5-bcb2-67c4a3051215}</Project>
-      <Name>HelperClasses</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

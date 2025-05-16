@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HelperClasses.Extensions;
+using Helper.Extensions;
 using DVLD_BLL.Applications.ManageApplicationTypes;
 
 namespace DVLDWinForms.Applications.ManageApplicationTypes

@@ -6,7 +6,7 @@ using System.ComponentModel;
 using DVLDWinForms.Properties;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using HelperClasses.Extensions;
+using Helper.Extensions;
 using DVLD_BLL;
 using DVLD_BLL.People;
 

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Text;
-using HelperClasses.Extensions;
+using Helper.Classes;
 using DVLD_DAL.People;
 
 namespace DVLD_DAL.Applications.ManageApplications.LocalDrivingLicenseApplications

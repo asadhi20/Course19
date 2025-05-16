@@ -49,6 +49,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Helper">
+      <HintPath>..\..\Extensions\bin\Debug\Helper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -309,10 +312,6 @@
       <Project>{398c06b2-60b0-4679-a8f2-315c8d021533}</Project>
       <Name>DVLD_BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Extensions\HelperClasses.csproj">
-      <Project>{a1ccfd69-da29-4ca5-bcb2-67c4a3051215}</Project>
-      <Name>HelperClasses</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\activate_profile_config.png" />
@@ -406,6 +405,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eye_72x72_75A2D8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

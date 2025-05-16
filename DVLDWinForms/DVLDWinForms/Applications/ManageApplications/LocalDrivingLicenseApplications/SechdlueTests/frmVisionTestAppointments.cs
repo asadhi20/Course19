@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using HelperClasses.Extensions;
+using Helper.Extensions;
 using DVLD_BLL.Applications.ManageApplications.LocalDrivingLicenseApplications;
 using DVLD_BLL.Applications.ManageApplications.LocalDrivingLicenseApplications.SechduleTests;
 

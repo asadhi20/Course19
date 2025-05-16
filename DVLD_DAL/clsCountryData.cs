@@ -2,7 +2,7 @@
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Configuration;
-using HelperClasses.Extensions;
+using Helper.Classes;
 using System.Collections.Generic;
 
 namespace DVLD_DAL

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using HelperClasses.Extensions;
+using Helper.Classes;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;

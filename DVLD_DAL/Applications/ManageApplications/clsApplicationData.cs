@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using HelperClasses.Extensions;
+using Helper.Classes;
 using System.Linq;
 using System.Text;
 using System.Net;

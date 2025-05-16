@@ -4,7 +4,7 @@ using System.IO;
 using System.Threading.Tasks;
 using DVLD_BLL;
 using DVLDWinForms.Properties;
-using HelperClasses.Extensions;
+using Helper.Extensions;
 using DVLD_BLL.People;
 
 namespace DVLDWinForms.People.UserControls

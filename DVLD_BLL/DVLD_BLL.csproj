@@ -59,9 +59,9 @@
       <Project>{cb815fa5-f61a-49ec-8a51-f05ab04901c4}</Project>
       <Name>DVLD_DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Extensions\HelperClasses.csproj">
+    <ProjectReference Include="..\Extensions\Helper.csproj">
       <Project>{a1ccfd69-da29-4ca5-bcb2-67c4a3051215}</Project>
-      <Name>HelperClasses</Name>
+      <Name>Helper</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

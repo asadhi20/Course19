@@ -25,3 +25,12 @@ C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLD_DAL\obj\Debug\DVLD_
 C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLD_DAL\obj\Debug\DVLD_DAL.csproj.Up2Date
 C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLD_DAL\obj\Debug\DVLD_DAL.dll
 C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLD_DAL\obj\Debug\DVLD_DAL.pdb
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\Course19\DVLD_DAL\bin\Debug\DVLD_DAL.dll
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\Course19\DVLD_DAL\bin\Debug\DVLD_DAL.pdb
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\Course19\DVLD_DAL\obj\Debug\DVLD_DAL.csproj.AssemblyReference.cache
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\Course19\DVLD_DAL\obj\Debug\DVLD_DAL.csproj.CoreCompileInputs.cache
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\Course19\DVLD_DAL\obj\Debug\DVLD_DAL.csproj.Up2Date
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\Course19\DVLD_DAL\obj\Debug\DVLD_DAL.dll
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\Course19\DVLD_DAL\obj\Debug\DVLD_DAL.pdb
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\Course19\DVLD_DAL\bin\Debug\Helper.dll
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\Course19\DVLD_DAL\bin\Debug\Helper.pdb

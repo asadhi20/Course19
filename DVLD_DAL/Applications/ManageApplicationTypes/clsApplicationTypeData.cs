@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
-using HelperClasses.Extensions;
+using Helper.Classes;
 
 namespace DVLD_DAL.Applications.ManageApplicationTypes
 {

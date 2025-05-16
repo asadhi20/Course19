@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVLD_DAL", "..\DVLD_DAL\DVL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVLD_BLL", "..\DVLD_BLL\DVLD_BLL.csproj", "{398C06B2-60B0-4679-A8F2-315C8D021533}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelperClasses", "..\Extensions\HelperClasses.csproj", "{A1CCFD69-DA29-4CA5-BCB2-67C4A3051215}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helper", "..\Extensions\Helper.csproj", "{A1CCFD69-DA29-4CA5-BCB2-67C4A3051215}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

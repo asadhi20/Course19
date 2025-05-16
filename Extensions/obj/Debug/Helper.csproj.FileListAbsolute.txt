@@ -1,0 +1,6 @@
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\Course19\Extensions\obj\Debug\Helper.csproj.AssemblyReference.cache
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\Course19\Extensions\obj\Debug\Helper.csproj.CoreCompileInputs.cache
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\Course19\Extensions\bin\Debug\Helper.dll
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\Course19\Extensions\bin\Debug\Helper.pdb
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\Course19\Extensions\obj\Debug\Helper.dll
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\Course19\Extensions\obj\Debug\Helper.pdb

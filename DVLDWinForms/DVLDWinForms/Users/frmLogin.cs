@@ -9,8 +9,8 @@ using System.Data;
 using System.Drawing;
 using System.Threading.Tasks;
 using DVLD_BLL.Users;
-using HelperClasses.Extensions;
-using HelperClasses.Helper_Classes;
+using Helper.Extensions;
+using Helper.Classes;
 
 namespace DVLDWinForms
 {

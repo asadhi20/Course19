@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using DVLD_BLL.Applications.ManageApplications.LocalDrivingLicenseApplications.SechduleTests;
 using DVLD_BLL.Applications.DrivingLicenseServices;
 using DVLD_BLL;
-using HelperClasses.Extensions;
+using Helper.Extensions;
 
 namespace DVLDWinForms.Applications.UserControls
 {

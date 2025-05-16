@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HelperClasses
+namespace Helper
 {
     public struct Option<T> : IEquatable<Option<T>> where T : class
     {

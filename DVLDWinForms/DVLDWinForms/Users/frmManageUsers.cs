@@ -7,7 +7,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using HelperClasses.Extensions;
+using Helper.Extensions;
 using DVLD_BLL.People;
 using DVLD_BLL.Users;
 
