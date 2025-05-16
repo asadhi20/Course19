@@ -92,10 +92,8 @@ C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForm
 C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\DVLDWinForms.exe
 C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\DVLDWinForms.pdb
 C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\DVLD_BLL.dll
-C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\HelperClasses.dll
 C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\DVLD_DAL.dll
 C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\DVLD_BLL.pdb
-C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\HelperClasses.pdb
 C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\DVLD_DAL.pdb
 C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.csproj.AssemblyReference.cache
 C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.Applications.DivingLicenseServices.NewDrivingLicense.frmNewLocalDrivingLicenseApplication.resources
@@ -168,3 +166,5 @@ C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\Course19\DVLDWinForms\DV
 C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\Course19\DVLDWinForms\DVLDWinForms\obj\Debug\DVLDWinForms.pdb
 C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\Helper.dll
 C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\Helper.pdb
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\Helper.dll
+C:\Users\mraba\source\repos\My_GItHub_Projects\Course19\DVLDWinForms\DVLDWinForms\bin\Debug\Helper.pdb
